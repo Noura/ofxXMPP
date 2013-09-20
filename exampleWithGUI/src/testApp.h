@@ -9,10 +9,10 @@
 
 #include "ofMain.h"
 #include "ofxGstXMPPRTP.h"
+#include "ofxGstRTPUtils.h"
 #include "ofxUI.h"
 
 #include "GUI.h"
-#include "CallRenderer.h"
 
 class testApp : public ofBaseApp{
 
@@ -39,8 +39,6 @@ class testApp : public ofBaseApp{
         AppState appState;
 
         ofxGstXMPPRTP rtp;
-    
-        CallRenderer * callRenderer;
     
 		GUI *gui;
 };

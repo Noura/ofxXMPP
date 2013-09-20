@@ -1,5 +1,4 @@
 #include "testApp.h"
-#include "ofxGstRTPUtils.h"
 
 void testApp::setup(){
 	ofSetLogLevel(ofxGstRTPClient::LOG_NAME,OF_LOG_VERBOSE);
@@ -13,13 +12,6 @@ void testApp::setup(){
 	rtp.setup(0);
 	rtp.getXMPP().setCapabilities("telekinect");
 	rtp.connectXMPP(server,user,pwd);
-	rtp.addSendVideoChannel(640,480,30,300);
-	rtp.addSendDepthChannel(640,480,30,300);
-	rtp.addSendOscChannel();
-	rtp.addSendAudioChannel();
-    
-    callRenderer = new CallRenderer(&appState, &rtp);
-    callRenderer->setup();
 
     gui = new GUI(&appState, &rtp);
     gui->setup();
@@ -28,14 +20,12 @@ void testApp::setup(){
 }
 
 void testApp::exit(){
-    delete callRenderer;
     delete gui;
 }
 
 
 //--------------------------------------------------------------
 void testApp::update(){
-    callRenderer->update();
     gui->update();
 
 	/*if(calling!=-1){
@@ -48,7 +38,6 @@ void testApp::update(){
 
 //--------------------------------------------------------------
 void testApp::draw(){
-    callRenderer->draw();
     gui->draw();
 }
 

@@ -15,7 +15,6 @@
 		255a7b680dc81e543c875794909009cd /* usb_libusb10.c in Sources */ = {isa = PBXBuildFile; fileRef = 28f9707464ba3ff98e05096cb8975bfc /* usb_libusb10.c */; };
 		483908258d00b98b4be69f0765fb3433 /* ofxLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 78d67a00eb899fac0943059784f8212a /* ofxLabel.cpp */; };
 		49beeb2dfa5319d55aa6899f53b95313 /* tilt.c in Sources */ = {isa = PBXBuildFile; fileRef = bf2f2aa872288d30f53983efd0e677a0 /* tilt.c */; };
-		4E10BBCD17E0EAB10093F362 /* CallRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4E10BBCB17E0EAB10093F362 /* CallRenderer.cpp */; };
 		4E84EEA517DF9C45006081FE /* FriendsView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4E84EEA317DF9C45006081FE /* FriendsView.cpp */; };
 		4E84EEAB17DF9C57006081FE /* Messages.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4E84EEA717DF9C57006081FE /* Messages.cpp */; };
 		4E84EEAC17DF9C57006081FE /* MessagesView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4E84EEA917DF9C57006081FE /* MessagesView.cpp */; };
@@ -160,8 +159,6 @@
 		45f38573a0b0deec8bbc7a2c680cffc4 /* simplex_downhill.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = simplex_downhill.h; path = ../../ofxOpenCv/libs/opencv/include/opencv2/flann/simplex_downhill.h; sourceTree = SOURCE_ROOT; };
 		46fbbbeb67cc2747b7655f3e7be53901 /* stun5389.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = stun5389.h; path = ../../ofxNice/libs/libnice/include/nice/stun5389.h; sourceTree = SOURCE_ROOT; };
 		49effcf36cf194cce0e1faabecebbc9b /* kdtree_index.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = kdtree_index.h; path = ../../ofxOpenCv/libs/opencv/include/opencv2/flann/kdtree_index.h; sourceTree = SOURCE_ROOT; };
-		4E10BBCB17E0EAB10093F362 /* CallRenderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CallRenderer.cpp; sourceTree = "<group>"; };
-		4E10BBCC17E0EAB10093F362 /* CallRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallRenderer.h; sourceTree = "<group>"; };
 		4E84EEA317DF9C45006081FE /* FriendsView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FriendsView.cpp; sourceTree = "<group>"; };
 		4E84EEA417DF9C45006081FE /* FriendsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsView.h; sourceTree = "<group>"; };
 		4E84EEA717DF9C57006081FE /* Messages.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Messages.cpp; sourceTree = "<group>"; };
@@ -669,15 +666,6 @@
 				a763ed608b35ae3310251dee914bc36d /* src */,
 			);
 			name = ofxGui;
-			sourceTree = "<group>";
-		};
-		4E10BBCA17E0EAB10093F362 /* CallRenderer */ = {
-			isa = PBXGroup;
-			children = (
-				4E10BBCB17E0EAB10093F362 /* CallRenderer.cpp */,
-				4E10BBCC17E0EAB10093F362 /* CallRenderer.h */,
-			);
-			path = CallRenderer;
 			sourceTree = "<group>";
 		};
 		4E84EEA217DF9C45006081FE /* Friends */ = {
@@ -1270,7 +1258,6 @@
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				4E10BBCA17E0EAB10093F362 /* CallRenderer */,
 				4E84EEA617DF9C57006081FE /* Messages */,
 				4E84EEA217DF9C45006081FE /* Friends */,
 				DA4B69DA17CF981C009F813D /* testApp.cpp */,
@@ -1592,7 +1579,6 @@
 				4E84EEAB17DF9C57006081FE /* Messages.cpp in Sources */,
 				4E84EEAC17DF9C57006081FE /* MessagesView.cpp in Sources */,
 				4E84EEB217DFB574006081FE /* AppState.cpp in Sources */,
-				4E10BBCD17E0EAB10093F362 /* CallRenderer.cpp in Sources */,
 				4EEFBF3817E1117E0025DF3E /* tinyxml.cpp in Sources */,
 				4EEFBF3917E1117E0025DF3E /* tinyxmlerror.cpp in Sources */,
 				4EEFBF3A17E1117E0025DF3E /* tinyxmlparser.cpp in Sources */,

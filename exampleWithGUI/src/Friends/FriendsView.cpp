@@ -51,7 +51,6 @@ void FriendsView::addFriendView(ofxXMPPUser & user) {
 }
 
 void FriendsView::removeFriendView(ofxXMPPUser & user) {
-    
     for (vector<FriendView*>::iterator it = friendViews.begin(); it < friendViews.end(); it++) {
         FriendView * f = (*it);
         if (f->user.userName == user.userName) {
