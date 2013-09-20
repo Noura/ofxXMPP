@@ -46,7 +46,6 @@ void FriendsView::addFriendView(ofxXMPPUser & user) {
         FriendView * f = new FriendView(user, w - scroll_w, friend_h, appState, rtp);
         canvas->addWidgetDown(f);
         friendViews.push_back(f);
-        estimateCanvasHeight();
     }
 }
 
@@ -56,7 +55,6 @@ void FriendsView::removeFriendView(ofxXMPPUser & user) {
         if (f->user.userName == user.userName) {
             canvas->removeWidget(f);
             friendViews.erase(it);
-            estimateCanvasHeight();
             break;
         }
     }
@@ -68,10 +66,12 @@ void FriendsView::estimateCanvasHeight() {
 }
 
 void FriendsView::update() {
+    estimateCanvasHeight();
     canvas->update();
 }
 
 void FriendsView::draw() {
+
     canvas->draw();
 
     /*
