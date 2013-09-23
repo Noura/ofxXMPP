@@ -11,8 +11,6 @@
 #ifndef example_all_MessagesView_h
 #define example_all_MessagesView_h
 
-#define MESSAGE_PADDING 5
-
 #include "ofMain.h"
 #include "ofxUI.h"
 
