@@ -18,14 +18,20 @@ MessagesView::MessagesView(float _x, float _y, float _w, float _h, AppState * _a
 , w(_w)
 , h(_h)
 , msg_h(30)
+, canvas_h(_h * CONVERSATION_PERCENT_HEIGHT/100.0)
 , appState(_appState)
 , rtp(_rtp)
-, canvas(NULL) {
+, canvas(NULL)
+, composingCanvas(NULL)
+, composingMsg(NULL) {
     ofAddListener(ofEvents().keyPressed, this, &MessagesView::onKeyPressed);
 }
 
 MessagesView::~MessagesView() {
+    ofRemoveListener(ofEvents().keyPressed, this, &MessagesView::onKeyPressed);
     delete canvas;
+    delete composingCanvas;
+    delete composingMsg;
 }
 
 void MessagesView::setModel(Messages * _model) {
@@ -34,13 +40,17 @@ void MessagesView::setModel(Messages * _model) {
 }
 
 void MessagesView::setup() {
-    canvas = new ofxUIScrollbarCanvas(x, y, w, h);
+    canvas = new ofxUIScrollbarCanvas(x, y, w, canvas_h);
     canvas->setSnapping(false);
     canvas->setScrollbarImage("GUI/scrollbar.png");
     
     for (int i = 0; i < model->messages.size(); i++ ) {
         addMessage(model->messages[i]);
     }
+    
+    composingCanvas = new ofxUIScrollbarCanvas(x, y+canvas_h, w, h-canvas_h);
+    composingMsg = new ofxUITextArea("composing", currentMessage, w - 50, h-canvas_h - 10, x + 5, y+canvas_h + 5);
+    composingCanvas->addWidgetDown(composingMsg);
 }
 
 void MessagesView::addMessage(ofxXMPPMessage &msg) {
@@ -57,6 +67,7 @@ string MessagesView::formatMessage(ofxXMPPMessage msg) {
 }
 
 void MessagesView::onKeyPressed(ofKeyEventArgs &key) {
+    
     if (key.key == OF_KEY_LEFT || key.key == OF_KEY_RIGHT) {
         return;
     }
@@ -69,11 +80,13 @@ void MessagesView::onKeyPressed(ofKeyEventArgs &key) {
     } else {
         currentMessage += (char)key.key;
     }
+    composingMsg->setTextString(currentMessage);
 }
 
 void MessagesView::draw() {
     
     canvas->draw();
+    composingCanvas->draw();
     
     /* TODO add back in "composing" display
     if( calling >= 0 && calling<(int)friends.size()){
@@ -81,4 +94,10 @@ void MessagesView::draw() {
             ofDrawBitmapString(friends[calling].userName + ": ...", ofGetWidth()-280, 20 + i*20 + j*30);
         }
     }*/
+}
+
+void MessagesView::update() {
+    
+    canvas->update();
+    composingCanvas->update();
 }

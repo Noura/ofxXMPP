@@ -17,6 +17,8 @@
 #include "AppState.h"
 #include "Messages.h"
 
+#define CONVERSATION_PERCENT_HEIGHT 70.0
+
 class Messages;
 
 class MessagesView {
@@ -29,6 +31,7 @@ public:
 
     void onKeyPressed(ofKeyEventArgs &key);
     void setup();
+    void update();
     void draw();
     
     static string formatMessage(ofxXMPPMessage msg);
@@ -43,8 +46,9 @@ private:
     ofxGstXMPPRTP * rtp;
     Messages * model;
     
-    float x, y, w, h, msg_h;
-    ofxUIScrollbarCanvas * canvas;
+    float x, y, w, h, msg_h, canvas_h;
+    ofxUIScrollbarCanvas * canvas, * composingCanvas;
+    ofxUITextArea * composingMsg;
 
 };
 

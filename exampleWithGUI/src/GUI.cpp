@@ -37,10 +37,10 @@ void GUI::setup() {
 
 void GUI::update() {
     friendsView->update();
+    messagesView->update();
 }
 
 void GUI::draw() {
-    
     friendsView->draw();
     messagesView->draw();
 }
