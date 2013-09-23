@@ -61,30 +61,39 @@ void FriendsView::update() {
 
 void FriendsView::draw() {
 
+    vector<ofxXMPPUser> to_add_copy;
+    vector<ofxXMPPUser> to_remove_copy;
     rtp->getXMPP().lock();
     while (!to_add.empty()) {
-        ofxXMPPUser & user = to_add.front();
+        to_add_copy.push_back(to_add.front());
+        to_add.pop_front();
+    }
+    while (!to_remove.empty()) {
+        to_remove_copy.push_back(to_remove.front());
+        to_remove.pop_front();
+    }
+    rtp->getXMPP().unlock();
+    
+    for (vector<ofxXMPPUser>::iterator it = to_add_copy.begin(); it < to_add_copy.end(); it++) {
+        ofxXMPPUser user = (*it);
         if (FriendView::isValidFriend(user)) {
             FriendView * f = new FriendView(user, w - scroll_w, friend_h, appState, rtp);
             canvas->addWidgetDown(f);
             friendViews.push_back(f);
         }
-        to_add.pop_front();
     }
-
-    while (!to_remove.empty()) {
-        ofxXMPPUser & user = to_remove.front();
-        for (vector<FriendView*>::iterator it = friendViews.begin(); it < friendViews.end(); it++) {
-            FriendView * f = (*it);
+    
+    for (vector<ofxXMPPUser>::iterator uit = to_remove_copy.begin(); uit < to_remove_copy.end(); uit++) {
+        ofxXMPPUser user = (*uit);
+        for (vector<FriendView*>::iterator fit = friendViews.begin(); fit < friendViews.end(); fit++) {
+            FriendView * f = (*fit);
             if (f->user.userName == user.userName) {
                 canvas->removeWidget(f);
-                friendViews.erase(it);
+                friendViews.erase(fit);
                 break;
             }
         }
-        to_remove.pop_front();
     }
-    rtp->getXMPP().unlock();
 
     float padding_guess = 8.0;
     canvas->setContentHeight(2*padding_guess + (friend_h + padding_guess) * friendViews.size());
