@@ -25,7 +25,7 @@ MessagesView::MessagesView(float _x, float _y, float _w, float _h, AppState * _a
 }
 
 MessagesView::~MessagesView() {
-    if (canvas) delete canvas;
+    delete canvas;
 }
 
 void MessagesView::setModel(Messages * _model) {
