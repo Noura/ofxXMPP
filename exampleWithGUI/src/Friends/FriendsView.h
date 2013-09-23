@@ -29,7 +29,8 @@ public:
                 ofxGstXMPPRTP * _rtp);
     ~FriendsView();
 
-    void onXMPPFriendEvent(ofxXMPPUser & user);
+    void addFriendView(ofxXMPPUser & user);
+    void removeFriendView(ofxXMPPUser & user);
     void mousePressed(int x, int y, int button);
     void setup();
     void update();
@@ -37,14 +38,15 @@ public:
 
 private:
     
+    void estimateCanvasHeight();
+    
     AppState * appState;
     ofxGstXMPPRTP * rtp;
     
     float x, y, w, h, friend_h;
     float scroll_w = 30;
     ofxUIScrollbarCanvas * canvas;
-    int num_friends;
-    bool need_to_update;
+    vector<FriendView*> friendViews;
 
 };
 
