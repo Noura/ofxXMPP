@@ -18,6 +18,7 @@ Messages::Messages(AppState * _appState, ofxGstXMPPRTP * _rtp)
 }
 
 void Messages::setView(MessagesView * view) {
+    //TODO ofRemoveListener in destructor or if changing views
     ofAddListener(view->userLocalFinishedTypingMessage, this, &Messages::onUserLocalFinishedTypingMessage);
 }
 

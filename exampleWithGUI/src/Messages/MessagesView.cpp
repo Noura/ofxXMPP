@@ -77,6 +77,10 @@ void MessagesView::onKeyPressed(ofKeyEventArgs &key) {
         msg.body = currentMessage.substr();
         ofNotifyEvent(userLocalFinishedTypingMessage, msg, this);
         currentMessage = "";
+    } else if (key.key == OF_KEY_BACKSPACE) {
+        if (currentMessage.size() > 0) {
+            currentMessage = currentMessage.substr(0, currentMessage.size()-1);
+        }
     } else {
         currentMessage += (char)key.key;
     }
