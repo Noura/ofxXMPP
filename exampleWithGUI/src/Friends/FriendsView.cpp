@@ -19,55 +19,56 @@ FriendsView::FriendsView(float _x, float _y, float _w, float _h,
 , friend_h(20)
 , appState(_appState)
 , rtp(_rtp)
-, canvas(NULL) {
+, canvas(NULL)
+, num_friends(0)
+, need_to_update(true) {
 }
 
 FriendsView::~FriendsView() {
-    if(canvas) delete canvas;
+    ofRemoveListener(rtp->getXMPP().userConnected, this, &FriendsView::onXMPPFriendEvent);
+    ofRemoveListener(rtp->getXMPP().userDisconnected, this, &FriendsView::onXMPPFriendEvent);
+    delete canvas;
 }
 
 void FriendsView::setup() {
+    ofAddListener(rtp->getXMPP().userConnected, this, &FriendsView::onXMPPFriendEvent);
+    ofAddListener(rtp->getXMPP().userDisconnected, this, &FriendsView::onXMPPFriendEvent);
+}
+
+void FriendsView::onXMPPFriendEvent(ofxXMPPUser & user) {
+    need_to_update = true;
+}
+
+void FriendsView::update() {
+    if (!need_to_update) {
+        return;
+    }
+
+    // I used to add and remove FriendView widgets from the canvas individually
+    // on XMPP.userConnected and XMPP.userDisconnected events, but ofxUICanvas
+    // does not "reflow" its widgets and so there would be holes left by
+    // disconnected users. The simplest workaround is just redrawing it all.
+    delete canvas;
     canvas = new ofxUIScrollbarCanvas(x, y, w, h);
     canvas->setSnapping(false);
     canvas->setScrollbarImage("GUI/scrollbar.png");
     
     const vector<ofxXMPPUser> & friends = rtp->getXMPP().getFriends();
-    for (int i = 0; i < friends.size(); i++) {
+    int num_friends = friends.size();
+    for (int i = 0; i < num_friends; i++) {
         ofxXMPPUser user = friends[i];
-        addFriendView(user);
-    }
-
-    ofAddListener(rtp->getXMPP().userConnected, this, &FriendsView::addFriendView);
-    ofAddListener(rtp->getXMPP().userDisconnected, this, &FriendsView::removeFriendView);
-}
-
-void FriendsView::addFriendView(ofxXMPPUser & user) {
-    if (FriendView::isValidFriend(user)) {
-        FriendView * f = new FriendView(user, w - scroll_w, friend_h, appState, rtp);
-        canvas->addWidgetDown(f);
-        friendViews.push_back(f);
-    }
-}
-
-void FriendsView::removeFriendView(ofxXMPPUser & user) {
-    for (vector<FriendView*>::iterator it = friendViews.begin(); it < friendViews.end(); it++) {
-        FriendView * f = (*it);
-        if (f->user.userName == user.userName) {
-            canvas->removeWidget(f);
-            friendViews.erase(it);
-            break;
+        if (FriendView::isValidFriend(user)) {
+            FriendView * f = new FriendView(user, w - scroll_w, friend_h, appState, rtp);
+            canvas->addWidgetDown(f);
         }
     }
-}
-
-void FriendsView::estimateCanvasHeight() {
+    
+    //ofxUIScrollbarCanvas needs to be told its height so it can scroll properly
     float padding_guess = 8.0;
-    canvas->setContentHeight(2*padding_guess + (friend_h + padding_guess) * friendViews.size());
-}
-
-void FriendsView::update() {
-    estimateCanvasHeight();
+    canvas->setContentHeight(2*padding_guess + (friend_h + padding_guess) * num_friends);
     canvas->update();
+
+    need_to_update = false;
 }
 
 void FriendsView::draw() {
