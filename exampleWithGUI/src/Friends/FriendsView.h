@@ -38,8 +38,6 @@ public:
 
 private:
     
-    void estimateCanvasHeight();
-    
     AppState * appState;
     ofxGstXMPPRTP * rtp;
     
@@ -47,7 +45,8 @@ private:
     float scroll_w = 30;
     ofxUIScrollbarCanvas * canvas;
     vector<FriendView*> friendViews;
-
+    deque<ofxXMPPUser> to_remove;
+    deque<ofxXMPPUser> to_add;
 };
 
 #endif
