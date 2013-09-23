@@ -31,7 +31,6 @@ public:
 
     void addFriendView(ofxXMPPUser & user);
     void removeFriendView(ofxXMPPUser & user);
-    void mousePressed(int x, int y, int button);
     void setup();
     void update();
     void draw();

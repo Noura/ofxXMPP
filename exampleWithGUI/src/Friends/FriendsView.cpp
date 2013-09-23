@@ -118,15 +118,3 @@ void FriendsView::draw() {
     
     canvas->draw();
 }
-
-void FriendsView::mousePressed(int x, int y, int button) {
-    /*
-    if (appState->calling == -1) {
-        ofVec2f mouse(x,y);
-        ofRectangle friendsRect(x, y, w, rtp->getXMPP().getFriends().size() * friend_h);
-        if (friendsRect.inside(mouse)) {
-            int calling = mouse.y / 20;
-            appState->setCalling(calling);
-        }
-    }*/
-}
