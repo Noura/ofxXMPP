@@ -34,11 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "src/Messages/MessagesView.cpp"
-         timestampString = "401730073.775726"
+         timestampString = "401742781.974268"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "98"
-         endingLineNumber = "98"
+         startingLineNumber = "86"
+         endingLineNumber = "86"
          landmarkName = "MessagesView::draw()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -47,11 +47,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "src/Messages/MessagesView.cpp"
-         timestampString = "401730073.775726"
+         timestampString = "401742781.974268"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "111"
-         endingLineNumber = "111"
+         startingLineNumber = "99"
+         endingLineNumber = "99"
          landmarkName = "MessagesView::update()"
          landmarkType = "5">
       </FileBreakpoint>

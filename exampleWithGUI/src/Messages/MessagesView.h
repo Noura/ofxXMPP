@@ -38,7 +38,6 @@ public:
     void addMessage(ofxXMPPMessage &msg);
     
     ofEvent<ofxXMPPMessage> userLocalFinishedTypingMessage;
-    std::string currentMessage;
     
 private:
     
@@ -47,8 +46,9 @@ private:
     Messages * model;
     
     float x, y, w, h, msg_h, canvas_h;
-    ofxUIScrollbarCanvas * canvas, * composingCanvas;
-    ofxUITextArea * composingMsg;
+    ofxUIScrollbarCanvas * canvas;
+    ofxUICanvas * composingCanvas;
+    ofxUITextInput * composingMsg;
 
 };
 
