@@ -39,7 +39,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "86"
          endingLineNumber = "86"
-         landmarkName = "MessagesView::onKeyPressed(ofKeyEventArgs &amp;key)"
+         landmarkName = "MessagesView::draw()"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -52,7 +52,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "99"
          endingLineNumber = "99"
-         landmarkName = "MessagesView::draw()"
+         landmarkName = "MessagesView::update()"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
