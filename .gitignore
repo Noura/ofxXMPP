@@ -1,6 +1,14 @@
 example/obj
+
 example/obj/**
+
 example/bin/*
 !example/bin/data
+
 exampleWithGui/bin/data/*.xml
 !exampleWithGui/bin/data/settings_example.xml
+
+exampleWithGUI/*.xcuserstate
+
+exampleWithGUI/*.xcbkptlist
+

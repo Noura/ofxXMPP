@@ -12,8 +12,7 @@
 #include "Messages.h"
 
 MessagesView::MessagesView(float _x, float _y, float _w, float _h, AppState * _appState, ofxGstXMPPRTP * _rtp)
-: currentMessage("")
-, x(_x)
+: x(_x)
 , y(_y)
 , w(_w)
 , h(_h)
@@ -48,8 +47,9 @@ void MessagesView::setup() {
         addMessage(model->messages[i]);
     }
     
-    composingCanvas = new ofxUIScrollbarCanvas(x, y+canvas_h, w, h-canvas_h);
-    composingMsg = new ofxUITextArea("composing", currentMessage, w - 50, h-canvas_h - 10, x + 5, y+canvas_h + 5);
+    float margin = 5.0;
+    composingCanvas = new ofxUICanvas(x, y+canvas_h, w, h-canvas_h);
+    composingMsg = new ofxUITextInput("composing", "", w - 2.0*margin, h-canvas_h-margin, x+margin, y+canvas_h+margin);
     composingCanvas->addWidgetDown(composingMsg);
 }
 
@@ -67,24 +67,12 @@ string MessagesView::formatMessage(ofxXMPPMessage msg) {
 }
 
 void MessagesView::onKeyPressed(ofKeyEventArgs &key) {
-    
-    if (key.key == OF_KEY_LEFT || key.key == OF_KEY_RIGHT) {
-        return;
-    }
     if (key.key == OF_KEY_RETURN) {
         ofxXMPPMessage msg;
         msg.from = "me:"; // TODO use actual user name
-        msg.body = currentMessage.substr();
+        msg.body = composingMsg->getTextString();
         ofNotifyEvent(userLocalFinishedTypingMessage, msg, this);
-        currentMessage = "";
-    } else if (key.key == OF_KEY_BACKSPACE) {
-        if (currentMessage.size() > 0) {
-            currentMessage = currentMessage.substr(0, currentMessage.size()-1);
-        }
-    } else {
-        currentMessage += (char)key.key;
     }
-    composingMsg->setTextString(currentMessage);
 }
 
 void MessagesView::draw() {
