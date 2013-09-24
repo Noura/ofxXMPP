@@ -17,6 +17,10 @@ FriendView::FriendView(ofxXMPPUser _user, float _w, float _h, AppState * _appSta
     ofAddListener(ofEvents().mouseReleased, this, &FriendView::onMouseReleased);
 }
 
+FriendView::~FriendView() {
+    ofRemoveListener(ofEvents().mouseReleased, this, &FriendView::onMouseReleased);
+}
+
 bool FriendView::isValidFriend(const ofxXMPPUser &_user) {
     string name = FriendView::formatUserName(_user.userName);
     return (name != "");

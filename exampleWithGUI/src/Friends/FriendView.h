@@ -28,6 +28,7 @@ class FriendView : public ofxUILabelButton {
 public:
     
     FriendView(ofxXMPPUser _user, float _w, float _h, AppState * _appState, ofxGstXMPPRTP * _rtp);
+    ~FriendView();
 
     static bool isValidFriend(const ofxXMPPUser &_user);
     static string formatUserName(string _name);
