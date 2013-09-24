@@ -2,3 +2,4 @@ example/obj
 example/obj/**
 example/bin/*
 !example/bin/data
+exampleWithGui/bin/*
