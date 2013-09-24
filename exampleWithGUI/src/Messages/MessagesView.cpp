@@ -20,7 +20,7 @@ MessagesView::MessagesView(float _x, float _y, float _w, float _h, AppState * _a
 , canvas_h(_h * CONVERSATION_PERCENT_HEIGHT/100.0)
 , appState(_appState)
 , rtp(_rtp)
-, canvas(NULL)
+, messagesCanvas(NULL)
 , composingCanvas(NULL)
 , composingMsg(NULL) {
     ofAddListener(ofEvents().keyPressed, this, &MessagesView::onKeyPressed);
@@ -28,7 +28,7 @@ MessagesView::MessagesView(float _x, float _y, float _w, float _h, AppState * _a
 
 MessagesView::~MessagesView() {
     ofRemoveListener(ofEvents().keyPressed, this, &MessagesView::onKeyPressed);
-    delete canvas;
+    delete messagesCanvas;
     delete composingCanvas;
     delete composingMsg;
 }
@@ -39,9 +39,9 @@ void MessagesView::setModel(Messages * _model) {
 }
 
 void MessagesView::setup() {
-    canvas = new ofxUIScrollbarCanvas(x, y, w, canvas_h);
-    canvas->setSnapping(false);
-    canvas->setScrollbarImage("GUI/scrollbar.png");
+    messagesCanvas = new ofxUIScrollbarCanvas(x, y, w, canvas_h);
+    messagesCanvas->setSnapping(false);
+    messagesCanvas->setScrollbarImage("GUI/scrollbar.png");
     
     for (int i = 0; i < model->messages.size(); i++ ) {
         addMessage(model->messages[i]);
@@ -56,10 +56,10 @@ void MessagesView::setup() {
 void MessagesView::addMessage(ofxXMPPMessage &msg) {
     string text = formatMessage(msg);
     ofxUITextArea * messageView = new ofxUITextArea(text, text, w - OFX_UI_MIN_SCROLLBAR_W - 2.0);
-    canvas->addWidgetDown(messageView);
+    messagesCanvas->addWidgetDown(messageView);
     messageView->setVisible(true);
     cout << "MESSAGE: " << text << "[EOM]" << endl;
-    canvas->draw();
+    messagesCanvas->draw();
 }
 
 string MessagesView::formatMessage(ofxXMPPMessage msg) {
@@ -77,7 +77,7 @@ void MessagesView::onKeyPressed(ofKeyEventArgs &key) {
 
 void MessagesView::draw() {
     
-    canvas->draw();
+    messagesCanvas->draw();
     composingCanvas->draw();
     
     /* TODO add back in "composing" display
@@ -89,7 +89,6 @@ void MessagesView::draw() {
 }
 
 void MessagesView::update() {
-    
-    canvas->update();
+    messagesCanvas->update();
     composingCanvas->update();
 }

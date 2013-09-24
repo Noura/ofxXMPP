@@ -46,7 +46,7 @@ private:
     Messages * model;
     
     float x, y, w, h, msg_h, canvas_h;
-    ofxUIScrollbarCanvas * canvas;
+    ofxUIScrollbarCanvas * messagesCanvas;
     ofxUICanvas * composingCanvas;
     ofxUITextInput * composingMsg;
 
