@@ -46,10 +46,9 @@ void MessagesView::setup() {
     for (int i = 0; i < model->messages.size(); i++ ) {
         addMessage(model->messages[i]);
     }
-    
-    float margin = 5.0;
+
     composingCanvas = new ofxUICanvas(x, y+canvas_h, w, h-canvas_h);
-    composingMsg = new ofxUITextInput("composing", "", w - 2.0*margin, h-canvas_h-margin, x+margin, y+canvas_h+margin);
+    composingMsg = new ofxUITextInput("composing", "", w, h-canvas_h, x, y+canvas_h);
     composingCanvas->addWidgetDown(composingMsg);
 }
 
