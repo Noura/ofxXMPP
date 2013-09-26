@@ -4,29 +4,16 @@
    version = "1.0">
    <FileBreakpoints>
       <FileBreakpoint
-         shouldBeEnabled = "No"
+         shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "src/Messages/MessagesView.cpp"
-         timestampString = "401751379.891466"
+         filePath = "../../ofxUI/src/ofxUITextArea.h"
+         timestampString = "401918054.315127"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "85"
-         endingLineNumber = "85"
-         landmarkName = "MessagesView::draw()"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "src/Messages/MessagesView.cpp"
-         timestampString = "401751379.891466"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "97"
-         endingLineNumber = "97"
-         landmarkName = "MessagesView::update()"
+         startingLineNumber = "77"
+         endingLineNumber = "77"
+         landmarkName = "drawFill()"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

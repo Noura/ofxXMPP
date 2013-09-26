@@ -48,6 +48,7 @@ void MessagesView::setup() {
     }
 
     composingCanvas = new ofxUICanvas(x, y+canvas_h, w, h-canvas_h);
+    
     composingMsg = new ofxUITextInput("composing", "", w, h-canvas_h, x, y+canvas_h);
     composingCanvas->addWidgetDown(composingMsg);
 }
@@ -65,19 +66,19 @@ string MessagesView::formatMessage(ofxXMPPMessage msg) {
     return msg.from + " " + msg.body;
 }
 
-void MessagesView::onKeyPressed(ofKeyEventArgs &key) {
+void MessagesView::onKeyPressed(ofKeyEventArgs &key) {/*
     if (key.key == OF_KEY_RETURN) {
         ofxXMPPMessage msg;
         msg.from = "me:"; // TODO use actual user name
         msg.body = composingMsg->getTextString();
         ofNotifyEvent(userLocalFinishedTypingMessage, msg, this);
     }
-}
+*/}
 
 void MessagesView::draw() {
     
     messagesCanvas->draw();
-    composingCanvas->draw();
+    //composingCanvas->draw();
     
     /* TODO add back in "composing" display
     if( calling >= 0 && calling<(int)friends.size()){
@@ -89,5 +90,5 @@ void MessagesView::draw() {
 
 void MessagesView::update() {
     messagesCanvas->update();
-    composingCanvas->update();
+    //composingCanvas->update();
 }
