@@ -10,7 +10,7 @@
 #include "FriendView.h"
  
 FriendView::FriendView(ofxXMPPUser _user, float _w, float _h, AppState * _appState, ofxGstXMPPRTP * _rtp)
-: ofxUILabelButton(formatUserName(_user.userName), false, _w, _h, OFX_UI_FONT_SMALL, true)
+: ofxUILabelButton(formatUserName(_user.userName), false, _w, _h, OFX_UI_FONT_SMALL_SIZE, true)
 , user(_user)
 , appState(_appState)
 , rtp(_rtp) {
