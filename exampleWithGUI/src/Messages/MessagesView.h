@@ -29,7 +29,6 @@ public:
     ~MessagesView();
     void setModel(Messages * _model);
 
-    void onKeyPressed(ofKeyEventArgs &key);
     void setup();
     void update();
     void draw();

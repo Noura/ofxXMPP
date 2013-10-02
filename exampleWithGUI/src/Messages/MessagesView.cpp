@@ -23,11 +23,10 @@ MessagesView::MessagesView(float _x, float _y, float _w, float _h, AppState * _a
 , messagesCanvas(NULL)
 , composingCanvas(NULL)
 , composingMsg(NULL) {
-    ofAddListener(ofEvents().keyPressed, this, &MessagesView::onKeyPressed);
+
 }
 
 MessagesView::~MessagesView() {
-    ofRemoveListener(ofEvents().keyPressed, this, &MessagesView::onKeyPressed);
     delete messagesCanvas;
     delete composingCanvas;
     delete composingMsg;
@@ -65,15 +64,6 @@ void MessagesView::addMessage(ofxXMPPMessage &msg) {
 string MessagesView::formatMessage(ofxXMPPMessage msg) {
     return msg.from + " " + msg.body;
 }
-
-void MessagesView::onKeyPressed(ofKeyEventArgs &key) {/*
-    if (key.key == OF_KEY_RETURN) {
-        ofxXMPPMessage msg;
-        msg.from = "me:"; // TODO use actual user name
-        msg.body = composingMsg->getTextString();
-        ofNotifyEvent(userLocalFinishedTypingMessage, msg, this);
-    }
-*/}
 
 void MessagesView::draw() {
     
