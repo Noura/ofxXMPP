@@ -22,7 +22,8 @@ MessagesView::MessagesView(float _x, float _y, float _w, float _h, AppState * _a
 , rtp(_rtp)
 , messagesCanvas(NULL)
 , composingCanvas(NULL)
-, composingMsg(NULL) {
+, composingMsg(NULL)
+, messagesHeight(0) {
 
 }
 
@@ -64,14 +65,17 @@ void MessagesView::onNewLocalMessage(string &msg) {
 void MessagesView::addMessage(ofxXMPPMessage &msg) {
     string text = formatMessage(msg);
     ofxUITextArea * messageView = new ofxUITextArea(text, text, w - OFX_UI_MIN_SCROLLBAR_W - 2.0);
+
     messagesCanvas->addWidgetDown(messageView);
+    messagesHeight += messageView->getRect()->height + 6.0;
+    messagesCanvas->setContentHeight(MAX(messagesHeight, messagesCanvas->getContentHeight()));
     messageView->setVisible(true);
-    cout << "MESSAGE: " << text << "[EOM]" << endl;
     messagesCanvas->draw();
+    messagesCanvas->scrollToBottom();
 }
 
 string MessagesView::formatMessage(ofxXMPPMessage msg) {
-    return msg.from + " " + msg.body;
+    return msg.from + ": " + msg.body;
 }
 
 void MessagesView::draw() {

@@ -46,6 +46,7 @@ private:
     
     float x, y, w, h, msg_h, canvas_h;
     ofxUIScrollbarCanvas * messagesCanvas;
+    float messagesHeight; // must tell messagesCanvas the height of its content
     ofxUICanvas * composingCanvas;
     ofxUITextInput * composingMsg;
 

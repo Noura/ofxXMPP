@@ -33,7 +33,6 @@ void Messages::onNewLocalMessage(string & msg) {
     message.body = msg;
     message.from = "me";
     addMessage(message);
-    
-    //TODO maybe it would be better if testApp was the only UI class that told rtp what to do
+
     rtp->getXMPP().sendMessage(appState->calling.userName, message.body);
 }
