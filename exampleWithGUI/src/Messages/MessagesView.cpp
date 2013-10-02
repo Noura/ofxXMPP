@@ -23,11 +23,14 @@ MessagesView::MessagesView(float _x, float _y, float _w, float _h, AppState * _a
 , messagesCanvas(NULL)
 , composingCanvas(NULL)
 , composingMsg(NULL) {
-    ofAddListener(ofEvents().keyPressed, this, &MessagesView::onKeyPressed);
+
 }
 
 MessagesView::~MessagesView() {
-    ofRemoveListener(ofEvents().keyPressed, this, &MessagesView::onKeyPressed);
+    if (model)
+        ofRemoveListener(model->newMessage, this, &MessagesView::addMessage);
+    if (composingMsg)
+        ofRemoveListener(composingMsg->inputSubmitted, this, &MessagesView::onNewLocalMessage);
     delete messagesCanvas;
     delete composingCanvas;
     delete composingMsg;
@@ -46,11 +49,16 @@ void MessagesView::setup() {
     for (int i = 0; i < model->messages.size(); i++ ) {
         addMessage(model->messages[i]);
     }
-    
-    float margin = 5.0;
+
     composingCanvas = new ofxUICanvas(x, y+canvas_h, w, h-canvas_h);
-    composingMsg = new ofxUITextInput("composing", "", w - 2.0*margin, h-canvas_h-margin, x+margin, y+canvas_h+margin);
+    
+    composingMsg = new ofxUITextInput("composing", "", w, h-canvas_h, x, y+canvas_h);
     composingCanvas->addWidgetDown(composingMsg);
+    ofAddListener(composingMsg->inputSubmitted, this, &MessagesView::onNewLocalMessage);
+}
+
+void MessagesView::onNewLocalMessage(string &msg) {
+    ofNotifyEvent(newLocalMessage, msg, this);
 }
 
 void MessagesView::addMessage(ofxXMPPMessage &msg) {
@@ -66,19 +74,10 @@ string MessagesView::formatMessage(ofxXMPPMessage msg) {
     return msg.from + " " + msg.body;
 }
 
-void MessagesView::onKeyPressed(ofKeyEventArgs &key) {
-    if (key.key == OF_KEY_RETURN) {
-        ofxXMPPMessage msg;
-        msg.from = "me:"; // TODO use actual user name
-        msg.body = composingMsg->getTextString();
-        ofNotifyEvent(userLocalFinishedTypingMessage, msg, this);
-    }
-}
-
 void MessagesView::draw() {
     
     messagesCanvas->draw();
-    composingCanvas->draw();
+    //composingCanvas->draw();
     
     /* TODO add back in "composing" display
     if( calling >= 0 && calling<(int)friends.size()){
@@ -90,5 +89,5 @@ void MessagesView::draw() {
 
 void MessagesView::update() {
     messagesCanvas->update();
-    composingCanvas->update();
+    //composingCanvas->update();
 }

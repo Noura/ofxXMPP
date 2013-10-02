@@ -29,15 +29,14 @@ public:
     ~MessagesView();
     void setModel(Messages * _model);
 
-    void onKeyPressed(ofKeyEventArgs &key);
     void setup();
     void update();
     void draw();
     
     static string formatMessage(ofxXMPPMessage msg);
     void addMessage(ofxXMPPMessage &msg);
-    
-    ofEvent<ofxXMPPMessage> userLocalFinishedTypingMessage;
+    void onNewLocalMessage(string &msg);
+    ofEvent<string> newLocalMessage;
     
 private:
     

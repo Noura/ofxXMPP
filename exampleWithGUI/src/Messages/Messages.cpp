@@ -19,7 +19,7 @@ Messages::Messages(AppState * _appState, ofxGstXMPPRTP * _rtp)
 
 void Messages::setView(MessagesView * view) {
     //TODO ofRemoveListener in destructor or if changing views
-    ofAddListener(view->userLocalFinishedTypingMessage, this, &Messages::onUserLocalFinishedTypingMessage);
+    ofAddListener(view->newLocalMessage, this, &Messages::onNewLocalMessage);
 }
 
 void Messages::addMessage(ofxXMPPMessage & msg){
@@ -28,10 +28,12 @@ void Messages::addMessage(ofxXMPPMessage & msg){
     ofNotifyEvent(newMessage, msg, this);
 }
 
-void Messages::onUserLocalFinishedTypingMessage(ofxXMPPMessage & msg) {
-
-    addMessage(msg);
+void Messages::onNewLocalMessage(string & msg) {
+    ofxXMPPMessage message;
+    message.body = msg;
+    message.from = "me";
+    addMessage(message);
     
     //TODO maybe it would be better if testApp was the only UI class that told rtp what to do
-    rtp->getXMPP().sendMessage(appState->calling.userName, msg.body);
+    rtp->getXMPP().sendMessage(appState->calling.userName, message.body);
 }
