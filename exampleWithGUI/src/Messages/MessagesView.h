@@ -35,8 +35,8 @@ public:
     
     static string formatMessage(ofxXMPPMessage msg);
     void addMessage(ofxXMPPMessage &msg);
-    
-    ofEvent<ofxXMPPMessage> userLocalFinishedTypingMessage;
+    void onNewLocalMessage(string &msg);
+    ofEvent<string> newLocalMessage;
     
 private:
     

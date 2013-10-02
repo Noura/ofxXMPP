@@ -27,6 +27,10 @@ MessagesView::MessagesView(float _x, float _y, float _w, float _h, AppState * _a
 }
 
 MessagesView::~MessagesView() {
+    if (model)
+        ofRemoveListener(model->newMessage, this, &MessagesView::addMessage);
+    if (composingMsg)
+        ofRemoveListener(composingMsg->inputSubmitted, this, &MessagesView::onNewLocalMessage);
     delete messagesCanvas;
     delete composingCanvas;
     delete composingMsg;
@@ -50,6 +54,11 @@ void MessagesView::setup() {
     
     composingMsg = new ofxUITextInput("composing", "", w, h-canvas_h, x, y+canvas_h);
     composingCanvas->addWidgetDown(composingMsg);
+    ofAddListener(composingMsg->inputSubmitted, this, &MessagesView::onNewLocalMessage);
+}
+
+void MessagesView::onNewLocalMessage(string &msg) {
+    ofNotifyEvent(newLocalMessage, msg, this);
 }
 
 void MessagesView::addMessage(ofxXMPPMessage &msg) {

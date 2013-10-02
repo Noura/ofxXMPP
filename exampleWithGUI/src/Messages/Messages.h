@@ -27,7 +27,7 @@ public:
     Messages(AppState * _appState, ofxGstXMPPRTP * _rtp);
     void setView(MessagesView * view);
     
-    void onUserLocalFinishedTypingMessage(ofxXMPPMessage & msg);
+    void onNewLocalMessage(string & msg);
     void addMessage(ofxXMPPMessage & msg);
     
     deque<ofxXMPPMessage> messages;
