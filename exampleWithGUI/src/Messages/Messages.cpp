@@ -13,12 +13,18 @@
 
 Messages::Messages(AppState * _appState, ofxGstXMPPRTP * _rtp)
 : appState(_appState)
-, rtp(_rtp) {
+, rtp(_rtp)
+, view(NULL) {
     ofAddListener(rtp->getXMPP().newMessage, this, &Messages::addMessage);
 }
 
+Messages::~Messages() {
+    ofRemoveListener(rtp->getXMPP().newMessage, this, &Messages::addMessage);
+    if (view) ofRemoveListener(view->newLocalMessage, this, &Messages::onNewLocalMessage);
+}
+
 void Messages::setView(MessagesView * view) {
-    //TODO ofRemoveListener in destructor or if changing views
+    if (view) ofRemoveListener(view->newLocalMessage, this, &Messages::onNewLocalMessage);
     ofAddListener(view->newLocalMessage, this, &Messages::onNewLocalMessage);
 }
 
@@ -30,7 +36,7 @@ void Messages::addMessage(ofxXMPPMessage & msg){
 
 void Messages::onNewLocalMessage(string & msg) {
     ofxXMPPMessage message;
-    message.body = msg;
+    message.body = msg.substr();
     message.from = "me";
     addMessage(message);
 

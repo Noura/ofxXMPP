@@ -25,6 +25,7 @@ class Messages {
 public:
     
     Messages(AppState * _appState, ofxGstXMPPRTP * _rtp);
+    ~Messages();
     void setView(MessagesView * view);
     
     void onNewLocalMessage(string & msg);
@@ -37,6 +38,7 @@ private:
 
     AppState * appState;
     ofxGstXMPPRTP * rtp;
+    MessagesView * view;
     
 };
 
