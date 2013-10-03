@@ -21,7 +21,7 @@ class GUI {
 
 public:
 
-    GUI(AppState * _appState, ofxGstXMPPRTP * _rtp);
+    GUI(AppState * _appState, ofxGstXMPPRTP * _rtp, string _call_capability = "");
     ~GUI();
     
     void setup();
@@ -39,6 +39,8 @@ private:
     
     Messages * messages;
     MessagesView * messagesView;
+    
+    string call_capability;
     
 };
 

@@ -11,7 +11,7 @@
 #include "MessagesView.h"
 #include "Messages.h"
 
-MessagesView::MessagesView(float _x, float _y, float _w, float _h, AppState * _appState, ofxGstXMPPRTP * _rtp)
+MessagesView::MessagesView(float _x, float _y, float _w, float _h, AppState * _appState, ofxGstXMPPRTP * _rtp, string _call_capability)
 : x(_x)
 , y(_y)
 , w(_w)
@@ -19,9 +19,13 @@ MessagesView::MessagesView(float _x, float _y, float _w, float _h, AppState * _a
 , title_h(30.0)
 , appState(_appState)
 , rtp(_rtp)
+, call_capability(_call_capability)
+, call_button_label("Call")
 , messagesCanvas(NULL)
 , composingCanvas(NULL)
 , composingMsg(NULL)
+, callButton(NULL)
+, callButtonCanvas(NULL)
 , messagesHeight(0) {
     canvas_h = h * CONVERSATION_PERCENT_HEIGHT/100.0 - title_h;
 }
@@ -33,6 +37,7 @@ MessagesView::~MessagesView() {
         ofRemoveListener(composingMsg->inputSubmitted, this, &MessagesView::onNewLocalMessage);
     delete messagesCanvas;
     delete composingCanvas;
+    delete callButtonCanvas;
 }
 
 void MessagesView::setModel(Messages * _model) {
@@ -41,18 +46,33 @@ void MessagesView::setModel(Messages * _model) {
 }
 
 void MessagesView::setup() {
-    title = FriendView::formatUserName(appState->chatContact.userName);
+    ofxXMPPUser user = appState->chatContact;
+
+    title = FriendView::formatUserName(user.userName);
+    
+    if (call_capability.size() > 0) {
+        for (int i = 0; i < user.capabilities.size(); i++) {
+            if ((user.capabilities[i] == call_capability || user.userName == "noura.howell@gmail.com")
+                && !callButton) { // TODO remove noura.howell@gmail.com case; it's only for testing
+                float bX = x + w - 50.0;
+                float bY = y + 3.0;
+                float bW = 50.0;
+                float bH = title_h - 6.0;
+                callButtonCanvas = new ofxUICanvas(bX, bY, bW, bH);
+                callButton = new ofxUILabelButton(call_button_label, false, bW, bH, bX, bY, OFX_UI_FONT_SMALL_SIZE);
+                callButtonCanvas->addWidgetDown(callButton);
+            }
+        }
+    }
     
     messagesCanvas = new ofxUIScrollbarCanvas(x, y + title_h, w, canvas_h);
     messagesCanvas->setSnapping(false);
     messagesCanvas->setScrollbarImage("GUI/scrollbar.png");
-    
     for (int i = 0; i < model->messages.size(); i++ ) {
         addMessage(model->messages[i]);
     }
 
     composingCanvas = new ofxUICanvas(x, y + title_h + canvas_h, w, h - title_h - canvas_h);
-    
     composingMsg = new ofxUITextInput("composing", "", w, h - title_h - canvas_h, x, y + title_h + canvas_h);
     composingCanvas->addWidgetDown(composingMsg);
     composingMsg->focus();
@@ -86,6 +106,8 @@ void MessagesView::draw() {
     ofPopStyle();
     
     messagesCanvas->draw();
+    if (callButton)
+        callButtonCanvas->draw();
 
     //composingCanvas->draw();
     

@@ -14,6 +14,8 @@
 
 #include "GUI.h"
 
+#define CALL_CAPABILITY "telekinect"
+
 class testApp : public ofBaseApp{
 
 	public:

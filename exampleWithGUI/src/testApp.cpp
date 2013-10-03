@@ -10,10 +10,10 @@ void testApp::setup(){
 	string pwd = settings.getValue("pwd");
     
 	rtp.setup(0);
-	rtp.getXMPP().setCapabilities("telekinect");
+	rtp.getXMPP().setCapabilities(CALL_CAPABILITY);
 	rtp.connectXMPP(server,user,pwd);
 
-    gui = new GUI(&appState, &rtp);
+    gui = new GUI(&appState, &rtp, CALL_CAPABILITY);
     gui->setup();
 }
 
