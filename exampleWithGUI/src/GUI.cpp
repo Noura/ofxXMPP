@@ -7,10 +7,9 @@
 
 #include "GUI.h"
 
-GUI::GUI(AppState * _appState, ofxGstXMPPRTP * _rtp, string _call_capability)
+GUI::GUI(AppState * _appState, ofxGstXMPPRTP * _rtp)
 : appState(_appState)
 , rtp(_rtp)
-, call_capability(_call_capability)
 , friendsView(NULL)
 , messages(NULL)
 , messagesView(NULL) {
@@ -45,7 +44,7 @@ void GUI::onChatContactChange(ofxXMPPUser & _user) {
     delete messages;
     rtp->call(_user);
     messages = new Messages(appState, rtp);
-    messagesView = new MessagesView(GUI_FRIENDS_WIDTH, 0, GUI_MESSAGES_WIDTH, ofGetHeight(), appState, rtp, call_capability);
+    messagesView = new MessagesView(GUI_FRIENDS_WIDTH, 0, GUI_MESSAGES_WIDTH, ofGetHeight(), appState, rtp);
     messages->setView(messagesView);
     messagesView->setModel(messages);
     messagesView->setup();
