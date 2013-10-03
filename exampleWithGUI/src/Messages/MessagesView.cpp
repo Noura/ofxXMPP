@@ -16,7 +16,6 @@ MessagesView::MessagesView(float _x, float _y, float _w, float _h, AppState * _a
 , y(_y)
 , w(_w)
 , h(_h)
-, msg_h(30)
 , canvas_h(_h * CONVERSATION_PERCENT_HEIGHT/100.0)
 , appState(_appState)
 , rtp(_rtp)
