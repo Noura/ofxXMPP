@@ -13,7 +13,9 @@ void testApp::setup(){
 	rtp.getXMPP().setCapabilities(CALL_CAPABILITY);
 	rtp.connectXMPP(server,user,pwd);
 
-    gui = new GUI(&appState, &rtp, CALL_CAPABILITY);
+    appState.setCallCapability(CALL_CAPABILITY);
+    
+    gui = new GUI(&appState, &rtp);
     gui->setup();
 }
 
