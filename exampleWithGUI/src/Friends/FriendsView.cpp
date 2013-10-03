@@ -17,6 +17,7 @@ FriendsView::FriendsView(float _x, float _y, float _w, float _h,
 , w(_w)
 , h(_h)
 , friend_h(20)
+, legend_h(100.0)
 , appState(_appState)
 , rtp(_rtp)
 , canvas(NULL) {
@@ -29,7 +30,7 @@ FriendsView::~FriendsView() {
 }
 
 void FriendsView::setup() {
-    canvas = new ofxUIScrollbarCanvas(x, y, w, h);
+    canvas = new ofxUIScrollbarCanvas(x, y, w, h - legend_h);
     canvas->setSnapping(false);
     canvas->setScrollbarImage("GUI/scrollbar.png");
     
@@ -117,4 +118,6 @@ void FriendsView::draw() {
     canvas->reflowWidgets(ws, friendView_h, padding_guess);
     
     canvas->draw();
+    
+    FriendView::drawLegend(x + 5.0, y + h - legend_h + 5.0, appState);
 }
