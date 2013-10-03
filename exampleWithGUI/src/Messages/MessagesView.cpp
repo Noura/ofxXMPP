@@ -16,14 +16,14 @@ MessagesView::MessagesView(float _x, float _y, float _w, float _h, AppState * _a
 , y(_y)
 , w(_w)
 , h(_h)
-, canvas_h(_h * CONVERSATION_PERCENT_HEIGHT/100.0)
+, title_h(30.0)
 , appState(_appState)
 , rtp(_rtp)
 , messagesCanvas(NULL)
 , composingCanvas(NULL)
 , composingMsg(NULL)
 , messagesHeight(0) {
-
+    canvas_h = h * CONVERSATION_PERCENT_HEIGHT/100.0 - title_h;
 }
 
 MessagesView::~MessagesView() {
@@ -41,7 +41,9 @@ void MessagesView::setModel(Messages * _model) {
 }
 
 void MessagesView::setup() {
-    messagesCanvas = new ofxUIScrollbarCanvas(x, y, w, canvas_h);
+    title = FriendView::formatUserName(appState->chatContact.userName);
+    
+    messagesCanvas = new ofxUIScrollbarCanvas(x, y + title_h, w, canvas_h);
     messagesCanvas->setSnapping(false);
     messagesCanvas->setScrollbarImage("GUI/scrollbar.png");
     
@@ -49,9 +51,9 @@ void MessagesView::setup() {
         addMessage(model->messages[i]);
     }
 
-    composingCanvas = new ofxUICanvas(x, y+canvas_h, w, h-canvas_h);
+    composingCanvas = new ofxUICanvas(x, y + title_h + canvas_h, w, h - title_h - canvas_h);
     
-    composingMsg = new ofxUITextInput("composing", "", w, h-canvas_h, x, y+canvas_h);
+    composingMsg = new ofxUITextInput("composing", "", w, h - title_h - canvas_h, x, y + title_h + canvas_h);
     composingCanvas->addWidgetDown(composingMsg);
     composingMsg->focus();
     ofAddListener(composingMsg->inputSubmitted, this, &MessagesView::onNewLocalMessage);
@@ -78,8 +80,13 @@ string MessagesView::formatMessage(ofxXMPPMessage msg) {
 }
 
 void MessagesView::draw() {
+    ofPushStyle();
+    ofSetColor(0);
+    ofDrawBitmapString("Chat with " + title, x + 3.0, y + title_h - 3.0);
+    ofPopStyle();
     
     messagesCanvas->draw();
+
     //composingCanvas->draw();
     
     /* TODO add back in "composing" display

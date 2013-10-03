@@ -16,6 +16,7 @@
 
 #include "AppState.h"
 #include "Messages.h"
+#include "FriendView.h"
 
 #define CONVERSATION_PERCENT_HEIGHT 70.0
 
@@ -44,7 +45,8 @@ private:
     ofxGstXMPPRTP * rtp;
     Messages * model;
     
-    float x, y, w, h, canvas_h;
+    float x, y, w, h, canvas_h, title_h;
+    string title;
     ofxUIScrollbarCanvas * messagesCanvas;
     float messagesHeight; // must tell messagesCanvas the height of its content
     ofxUICanvas * composingCanvas;
