@@ -7,3 +7,7 @@ example/bin/*
 
 exampleWithGui/bin/data/*.xml
 !exampleWithGui/bin/data/settings_example.xml
+
+exampleWithGUI/exampleWithGUI.xcodeproj/xcuserdata/waazamdevelopment.xcuserdatad/xcdebugger/Breakpoints.xcbkptlist
+exampleWithGUI/bin/exampleWithGUIDebug.app/Contents/MacOS/exampleWithGUIDebug
+exampleWithGUI/exampleWithGUI.xcodeproj/project.xcworkspace/xcuserdata/waazamdevelopment.xcuserdatad/UserInterfaceState.xcuserstate
