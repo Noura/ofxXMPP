@@ -54,6 +54,7 @@ void MessagesView::setup() {
     
     composingMsg = new ofxUITextInput("composing", "", w, h-canvas_h, x, y+canvas_h);
     composingCanvas->addWidgetDown(composingMsg);
+    composingMsg->focus();
     ofAddListener(composingMsg->inputSubmitted, this, &MessagesView::onNewLocalMessage);
 }
 
