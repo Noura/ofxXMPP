@@ -26,7 +26,7 @@ class MessagesView {
   
 public:
     
-    MessagesView(float _x, float _y, float _w, float _h, AppState * _appState, ofxGstXMPPRTP * _rtp, string _call_capability = "");
+    MessagesView(float _x, float _y, float _w, float _h, AppState * _appState, ofxGstXMPPRTP * _rtp);
     ~MessagesView();
     void setModel(Messages * _model);
 
@@ -54,7 +54,7 @@ private:
     ofxUICanvas * callButtonCanvas;
     ofxUILabelButton * callButton;
     
-    string call_capability, call_button_label;
+    string call_button_label;
 
 };
 

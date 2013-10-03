@@ -11,7 +11,7 @@
 #include "MessagesView.h"
 #include "Messages.h"
 
-MessagesView::MessagesView(float _x, float _y, float _w, float _h, AppState * _appState, ofxGstXMPPRTP * _rtp, string _call_capability)
+MessagesView::MessagesView(float _x, float _y, float _w, float _h, AppState * _appState, ofxGstXMPPRTP * _rtp)
 : x(_x)
 , y(_y)
 , w(_w)
@@ -19,7 +19,6 @@ MessagesView::MessagesView(float _x, float _y, float _w, float _h, AppState * _a
 , title_h(30.0)
 , appState(_appState)
 , rtp(_rtp)
-, call_capability(_call_capability)
 , call_button_label("Call")
 , messagesCanvas(NULL)
 , composingCanvas(NULL)
@@ -50,10 +49,9 @@ void MessagesView::setup() {
 
     title = FriendView::formatUserName(user.userName);
     
-    if (call_capability.size() > 0) {
+    if (appState->callCapability.size() > 0) {
         for (int i = 0; i < user.capabilities.size(); i++) {
-            if ((user.capabilities[i] == call_capability || user.userName == "noura.howell@gmail.com")
-                && !callButton) { // TODO remove noura.howell@gmail.com case; it's only for testing
+            if (user.capabilities[i] == appState->callCapability && !callButton) {
                 float bX = x + w - 50.0;
                 float bY = y + 3.0;
                 float bW = 50.0;
@@ -109,7 +107,7 @@ void MessagesView::draw() {
     if (callButton)
         callButtonCanvas->draw();
 
-    //composingCanvas->draw();
+    composingCanvas->draw();
     
     /* TODO add back in "composing" display
     if( calling >= 0 && calling<(int)friends.size()){
