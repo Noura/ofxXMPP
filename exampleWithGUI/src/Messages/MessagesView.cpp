@@ -34,7 +34,6 @@ MessagesView::~MessagesView() {
         ofRemoveListener(composingMsg->inputSubmitted, this, &MessagesView::onNewLocalMessage);
     delete messagesCanvas;
     delete composingCanvas;
-    delete composingMsg;
 }
 
 void MessagesView::setModel(Messages * _model) {

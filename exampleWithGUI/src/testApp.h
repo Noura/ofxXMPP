@@ -34,8 +34,6 @@ class testApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
     
-        void onCallingChange(ofxXMPPUser &_user);
-    
         AppState appState;
 
         ofxGstXMPPRTP rtp;

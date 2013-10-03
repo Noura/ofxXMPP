@@ -14,6 +14,9 @@
 #include "Messages/MessagesView.h"
 #include "Friends/FriendsView.h"
 
+#define GUI_FRIENDS_WIDTH 300
+#define GUI_MESSAGES_WIDTH 300
+
 class GUI {
 
 public:
@@ -24,6 +27,8 @@ public:
     void setup();
     void update();
     void draw();
+    
+    void onChatContactChange(ofxXMPPUser & _user);
     
 private:
     

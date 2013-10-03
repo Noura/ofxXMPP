@@ -22,11 +22,9 @@ public:
     
     AppState();
     
-    // the friend index in rtp->getXMPP().getFriends() being called
-    // -1 means no one is being called
-    ofxXMPPUser calling;
-    ofEvent<ofxXMPPUser> callingChange;
-    void setCalling(ofxXMPPUser _user);
+    ofxXMPPUser chatContact;
+    ofEvent<ofxXMPPUser> chatContactChange;
+    void setChatContact(ofxXMPPUser _user);
 
 };
 

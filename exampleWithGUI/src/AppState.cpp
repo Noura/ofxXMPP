@@ -16,8 +16,8 @@
 AppState::AppState() {
 }
 
-void AppState::setCalling(ofxXMPPUser _user) {
-    calling = _user;
+void AppState::setChatContact(ofxXMPPUser _user) {
+    chatContact = _user;
     //int callingChangeEventArgs = 0; // just a placeholder
-    ofNotifyEvent(callingChange, calling, this);
+    ofNotifyEvent(chatContactChange, chatContact, this);
 }

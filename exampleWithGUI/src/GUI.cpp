@@ -16,31 +16,36 @@ GUI::GUI(AppState * _appState, ofxGstXMPPRTP * _rtp)
 }
 
 GUI::~GUI() {
+    ofRemoveListener(appState->chatContactChange, this, &GUI::onChatContactChange);
     delete friendsView;
-    delete messages;
     delete messagesView;
+    delete messages;
 }
 
-void GUI::setup() {
-    float friends_w = 300;
-    float messages_w = 300;
-    
-    friendsView = new FriendsView(0, 0, friends_w, ofGetHeight(), appState, rtp);
+void GUI::setup() {    
+    friendsView = new FriendsView(0, 0, GUI_FRIENDS_WIDTH, ofGetHeight(), appState, rtp);
     friendsView->setup();
     
-    messages = new Messages(appState, rtp);
-    messagesView = new MessagesView(friends_w, 0, messages_w, ofGetHeight(), appState, rtp);
-    messages->setView(messagesView);
-    messagesView->setModel(messages);
-    messagesView->setup();
+    ofAddListener(appState->chatContactChange, this, &GUI::onChatContactChange);
 }
 
 void GUI::update() {
     friendsView->update();
-    messagesView->update();
+    if (messagesView) messagesView->update();
 }
 
 void GUI::draw() {
     friendsView->draw();
-    messagesView->draw();
+    if (messagesView) messagesView->draw();
+}
+
+void GUI::onChatContactChange(ofxXMPPUser & _user) {
+    delete messagesView;
+    delete messages;
+    rtp->call(_user);
+    messages = new Messages(appState, rtp);
+    messagesView = new MessagesView(GUI_FRIENDS_WIDTH, 0, GUI_MESSAGES_WIDTH, ofGetHeight(), appState, rtp);
+    messages->setView(messagesView);
+    messagesView->setModel(messages);
+    messagesView->setup();
 }

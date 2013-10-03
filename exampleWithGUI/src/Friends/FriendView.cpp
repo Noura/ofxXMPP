@@ -78,5 +78,5 @@ void FriendView::onMouseReleased(ofMouseEventArgs &e) {
     if (!rect->inside(e.x, e.y)) {
         return;
     }
-    appState->setCalling(user);
+    appState->setChatContact(user);
 }

@@ -15,8 +15,6 @@ void testApp::setup(){
 
     gui = new GUI(&appState, &rtp);
     gui->setup();
-    
-    ofAddListener(appState.callingChange, this, &testApp::onCallingChange);
 }
 
 void testApp::exit(){
@@ -39,10 +37,6 @@ void testApp::update(){
 //--------------------------------------------------------------
 void testApp::draw(){
     gui->draw();
-}
-
-void testApp::onCallingChange(ofxXMPPUser &_user) {
-    rtp.call(_user);
 }
 
 void testApp::keyPressed(int key) {

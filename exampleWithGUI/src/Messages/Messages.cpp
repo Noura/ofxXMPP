@@ -34,5 +34,5 @@ void Messages::onNewLocalMessage(string & msg) {
     message.from = "me";
     addMessage(message);
 
-    rtp->getXMPP().sendMessage(appState->calling.userName, message.body);
+    rtp->getXMPP().sendMessage(appState->chatContact.userName, message.body);
 }
