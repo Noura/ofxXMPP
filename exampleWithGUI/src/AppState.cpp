@@ -13,11 +13,16 @@
 
 #include "AppState.h"
 
-AppState::AppState() {
+AppState::AppState()
+: callCapability("") {
 }
 
 void AppState::setChatContact(ofxXMPPUser _user) {
     chatContact = _user;
-    //int callingChangeEventArgs = 0; // just a placeholder
     ofNotifyEvent(chatContactChange, chatContact, this);
+}
+
+void AppState::setCallCapability(string _callCapability) {
+    callCapability = _callCapability;
+    ofNotifyEvent(callCapabilityChange, callCapability, this);
 }

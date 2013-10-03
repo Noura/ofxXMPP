@@ -25,6 +25,10 @@ public:
     ofxXMPPUser chatContact;
     ofEvent<ofxXMPPUser> chatContactChange;
     void setChatContact(ofxXMPPUser _user);
+    
+    string callCapability;
+    ofEvent<string> callCapabilityChange;
+    void setCallCapability(string _callCapability);
 
 };
 
