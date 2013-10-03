@@ -61,7 +61,7 @@ void FriendView::draw() {
     if (user.show == ofxXMPPShowAvailable) {
         ofCircle(shape_x, shape_y, r);
         for (int i = 0; i < user.capabilities.size(); i++) {
-            if (user.capabilities[i] == "telekinect" || i == 0) {
+            if (user.capabilities[i] == "telekinect") {
                 ofNoFill();
                 ofCircle(shape_x, shape_y, 2*r);
                 ofFill();
