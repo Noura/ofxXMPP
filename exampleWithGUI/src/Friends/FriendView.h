@@ -32,8 +32,15 @@ public:
 
     static bool isValidFriend(const ofxXMPPUser &_user);
     static string formatUserName(string _name);
-    void onMouseReleased(ofMouseEventArgs &e);
+    void onMousePressed(ofMouseEventArgs &e);
     void draw();
+    
+    static void drawLegend(float x, float y, AppState * _appState);
+    static void drawAvailableIcon(float x, float y);
+    static void drawAwayIcon(float x, float y);
+    static void drawDndIcon(float x, float y);
+    static void drawXAIcon(float x, float y);
+    static void drawCapabilityIcon(float x, float y);
     
     ofxXMPPUser user;
     
