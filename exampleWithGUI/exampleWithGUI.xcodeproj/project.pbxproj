@@ -2467,7 +2467,7 @@
 					"../../../addons/ofxGstRTP/src/**",
 					src,
 					"../../../addons/ofxGstRTP/libs/webrtc-audio-processing/src/system_wrappers/interface/**",
-					"/Users/waazamdevelopment/openFrameworks-master/addons/ofxGstRTP/libs/**",
+					"../../../addons/ofxGstRTP/libs/**",
 					"../../../addons/ofxGstRTP/libs/webrtc-audio-processing/src/**",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
@@ -2794,7 +2794,7 @@
 					../../../addons/ofxNice/libs/libnice/lib,
 					../../../addons/ofxNice/libs/libnice/lib/osx,
 					../../../addons/ofxNice/src,
-					"/Users/waazamdevelopment/openFrameworks-master/addons/ofxGstRTP/libs/webrtc-audio-processing/src",
+					"../../../addons/ofxGstRTP/libs/webrtc-audio-processing/src",
 					"../../../addons/ofxGstRTP/libs/**",
 					"../../../addons/ofxGstRTP/libs/snappy/**",
 					"../../../addons/ofxGstRTP/libs/snappy/src/**",
@@ -3018,7 +3018,7 @@
 					../../../addons/ofxNice/libs/libnice/lib,
 					../../../addons/ofxNice/libs/libnice/lib/osx,
 					../../../addons/ofxNice/src,
-					"/Users/waazamdevelopment/openFrameworks-master/addons/ofxGstRTP/libs/webrtc-audio-processing/src",
+					"../../../addons/ofxGstRTP/libs/webrtc-audio-processing/src",
 					"../../../addons/ofxGstRTP/libs/**",
 					"../../../addons/ofxGstRTP/libs/snappy/**",
 					"../../../addons/ofxGstRTP/libs/snappy/src/**",
