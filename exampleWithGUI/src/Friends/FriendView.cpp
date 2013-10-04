@@ -27,8 +27,8 @@ void FriendView::draw() {
     
     float r = FRIEND_STATE_CIRCLE_RADIUS;
     float m = FRIEND_STATE_CIRCLE_MARGIN;
-    float shape_x = getParent()->getRect()->x + rect->x + m;
-    float shape_y = getParent()->getRect()->y + rect->y + rect->height/2;
+    float shape_x = rect->x + m;
+    float shape_y = rect->y + rect->height/2;
     
     bool has_capability = false;
     for (int i = 0; i < user.capabilities.size(); i++) {
