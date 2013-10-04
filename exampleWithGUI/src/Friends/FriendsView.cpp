@@ -81,41 +81,22 @@ void FriendsView::draw() {
         ofxXMPPUser user = (*it);
         if (FriendView::isValidFriend(user)) {
             FriendView * f = new FriendView(user, w - scroll_w, friend_h, appState, rtp);
-            canvas->addWidgetDown(f);
-            friendViews.push_back(f);
+            canvas->addWidgetToList(f);
         }
     }
     
+    //TODO include a method in ofxUIScrollbarCanvas to remove multiple widgets efficiently
+    // this is super duper inefficient right now
+    list<ofxUIWidget*> friends = canvas->getWidgetList();
     for (vector<ofxXMPPUser>::iterator uit = to_remove_copy.begin(); uit < to_remove_copy.end(); uit++) {
         ofxXMPPUser user = (*uit);
-        for (vector<FriendView*>::iterator fit = friendViews.begin(); fit < friendViews.end(); fit++) {
-            FriendView * f = (*fit);
+        for (list<ofxUIWidget*>::iterator it = friends.begin(); it != friends.end(); it++) {
+            FriendView * f = (FriendView*)(*it);
             if (f->user.userName == user.userName) {
-                canvas->removeWidget(f);
-                friendViews.erase(fit);
-                break;
+                canvas->removeWidgetFromList(*it);
             }
         }
     }
-
-    // ofxUIScrollbarCanvas needs to be told the height of its content in order
-    // to scroll properly
-    float padding_guess = 8.0;
-    canvas->setContentHeight(2*padding_guess + (friend_h + padding_guess) * friendViews.size());
-    
-    // ofxUICanvas will just leave holes for removed widgets, so here we reset
-    // the y positions of all widgets
-    float friendView_h = friend_h + padding_guess;
-    // I know it sucks that you need to tell it the list of its own widgets to
-    // re-flow, but ofxUICanvas's internal vector<ofxUIWidget*> includes sub-
-    // widgets like labels, so whenever I try to iterate over that I get weird
-    // errors. Maybe I could make the ofxUIScrollbarCanvas maintain its own list
-    // of widgets...
-    vector<ofxUIWidget*> ws;
-    for (vector<FriendView*>::iterator it = friendViews.begin(); it < friendViews.end(); it++) {
-        ws.push_back((ofxUIWidget*)(*it));
-    }
-    canvas->reflowWidgets(ws, friendView_h, padding_guess);
     
     canvas->draw();
     

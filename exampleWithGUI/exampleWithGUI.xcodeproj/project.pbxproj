@@ -104,7 +104,6 @@
 		4E83EAF717FF278B00008332 /* cpu_features.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4E83EA9817FF278B00008332 /* cpu_features.cc */; };
 		4E83EAF817FF278B00008332 /* critical_section.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4E83EA9917FF278B00008332 /* critical_section.cc */; };
 		4E83EAF917FF278B00008332 /* critical_section_posix.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4E83EA9A17FF278B00008332 /* critical_section_posix.cc */; };
-		4E83EAFA17FF278B00008332 /* critical_section_windows.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4E83EA9C17FF278B00008332 /* critical_section_windows.cc */; };
 		4E84EEA517DF9C45006081FE /* FriendsView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4E84EEA317DF9C45006081FE /* FriendsView.cpp */; };
 		4E84EEAB17DF9C57006081FE /* Messages.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4E84EEA717DF9C57006081FE /* Messages.cpp */; };
 		4E84EEAC17DF9C57006081FE /* MessagesView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4E84EEA917DF9C57006081FE /* MessagesView.cpp */; };
@@ -115,6 +114,7 @@
 		4EEFBF3917E1117E0025DF3E /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4EEFBF3317E1117E0025DF3E /* tinyxmlerror.cpp */; };
 		4EEFBF3A17E1117E0025DF3E /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4EEFBF3417E1117E0025DF3E /* tinyxmlparser.cpp */; };
 		4EEFBF3B17E1117E0025DF3E /* ofxXmlSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4EEFBF3617E1117E0025DF3E /* ofxXmlSettings.cpp */; };
+		4EF2625617FF53ED0016E88A /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EF2625517FF53ED0016E88A /* GLKit.framework */; };
 		4EFBE1D217ECE4D700156168 /* agent.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EFBE1CC17ECE4D700156168 /* agent.a */; };
 		4EFBE1D317ECE4D700156168 /* gstnice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EFBE1CD17ECE4D700156168 /* gstnice.a */; };
 		4EFBE1D417ECE4D700156168 /* nice-random.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EFBE1CE17ECE4D700156168 /* nice-random.a */; };
@@ -424,8 +424,6 @@
 		4E83EA9917FF278B00008332 /* critical_section.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = critical_section.cc; sourceTree = "<group>"; };
 		4E83EA9A17FF278B00008332 /* critical_section_posix.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = critical_section_posix.cc; sourceTree = "<group>"; };
 		4E83EA9B17FF278B00008332 /* critical_section_posix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = critical_section_posix.h; sourceTree = "<group>"; };
-		4E83EA9C17FF278B00008332 /* critical_section_windows.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = critical_section_windows.cc; sourceTree = "<group>"; };
-		4E83EA9D17FF278B00008332 /* critical_section_windows.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = critical_section_windows.h; sourceTree = "<group>"; };
 		4E83EA9E17FF278B00008332 /* system_wrappers.gyp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = system_wrappers.gyp; sourceTree = "<group>"; };
 		4E83EA9F17FF278B00008332 /* typedefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = typedefs.h; sourceTree = "<group>"; };
 		4E83EAA017FF278B00008332 /* webrtc-audio-processing.pc.in */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "webrtc-audio-processing.pc.in"; sourceTree = "<group>"; };
@@ -497,6 +495,7 @@
 		4EEFBF3417E1117E0025DF3E /* tinyxmlparser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlparser.cpp; sourceTree = "<group>"; };
 		4EEFBF3617E1117E0025DF3E /* ofxXmlSettings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxXmlSettings.cpp; sourceTree = "<group>"; };
 		4EEFBF3717E1117E0025DF3E /* ofxXmlSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxXmlSettings.h; sourceTree = "<group>"; };
+		4EF2625517FF53ED0016E88A /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		4EFBE1AD17ECE4D700156168 /* address.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = address.h; sourceTree = "<group>"; };
 		4EFBE1AE17ECE4D700156168 /* agent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = agent.h; sourceTree = "<group>"; };
 		4EFBE1AF17ECE4D700156168 /* candidate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = candidate.h; sourceTree = "<group>"; };
@@ -721,6 +720,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA4B69DE17CF98F0009F813D /* GStreamer.framework in Frameworks */,
+				4EF2625617FF53ED0016E88A /* GLKit.framework in Frameworks */,
 				E7F985F815E0DEA3003869B5 /* Accelerate.framework in Frameworks */,
 				E7E077E815D3B6510020DFD4 /* QTKit.framework in Frameworks */,
 				E4EB6799138ADC1D00A09F29 /* GLUT.framework in Frameworks */,
@@ -1338,8 +1338,6 @@
 				4E83EA9917FF278B00008332 /* critical_section.cc */,
 				4E83EA9A17FF278B00008332 /* critical_section_posix.cc */,
 				4E83EA9B17FF278B00008332 /* critical_section_posix.h */,
-				4E83EA9C17FF278B00008332 /* critical_section_windows.cc */,
-				4E83EA9D17FF278B00008332 /* critical_section_windows.h */,
 				4E83EA9E17FF278B00008332 /* system_wrappers.gyp */,
 			);
 			path = source;
@@ -1754,6 +1752,7 @@
 				E4C2424510CC5A17004149E2 /* Cocoa.framework */,
 				E4C2424610CC5A17004149E2 /* IOKit.framework */,
 				E45BE9710E8CC7DD009D7055 /* AGL.framework */,
+				4EF2625517FF53ED0016E88A /* GLKit.framework */,
 				E45BE9720E8CC7DD009D7055 /* ApplicationServices.framework */,
 				E45BE9730E8CC7DD009D7055 /* AudioToolbox.framework */,
 				E45BE9740E8CC7DD009D7055 /* Carbon.framework */,
@@ -2304,7 +2303,6 @@
 				4E83EAF717FF278B00008332 /* cpu_features.cc in Sources */,
 				4E83EAF817FF278B00008332 /* critical_section.cc in Sources */,
 				4E83EAF917FF278B00008332 /* critical_section_posix.cc in Sources */,
-				4E83EAFA17FF278B00008332 /* critical_section_windows.cc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2466,15 +2464,16 @@
 					"../../../addons/ofxGstRTP/libs/snappy/src/**",
 					"../../../addons/ofxGstRTP/src/**",
 					src,
-					"../../../addons/ofxGstRTP/libs/webrtc-audio-processing/src/system_wrappers/interface/**",
-					"../../../addons/ofxGstRTP/libs/**",
 					"../../../addons/ofxGstRTP/libs/webrtc-audio-processing/src/**",
+					"/Library/Frameworks/GStreamer.framework/Versions/1.0/Headers/**",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				OTHER_CPLUSPLUSFLAGS = (
 					"-D__MACOSX_CORE__",
 					"-lpthread",
 					"-mtune=native",
+					"-DNDEBUG",
+					"-DWEBRTC_NS_FLOAT",
 				);
 				OTHER_LDFLAGS = (
 					"$(OF_CORE_LIBS)",
@@ -2514,7 +2513,7 @@
 				GCC_WARN_UNUSED_VALUE = NO;
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				HEADER_SEARCH_PATHS = (
-					"$(OF_CORE_HEADERS)",
+					"$(OF_CORE_HEADERS)/**",
 					../../../addons/ofxGui/libs,
 					../../../addons/ofxGui/src,
 					../../../addons/ofxKinect/libs,
@@ -2640,12 +2639,15 @@
 					../../../addons/ofxGstRTP/libs/snappy/src,
 					../../../addons/ofxGstRTP/src,
 					src,
+					"../../../addons/ofxGstRTP/libs/webrtc-audio-processing/src/**",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				OTHER_CPLUSPLUSFLAGS = (
 					"-D__MACOSX_CORE__",
 					"-lpthread",
 					"-mtune=native",
+					"-DNDEBUG",
+					"-DWEBRTC_NS_FLOAT",
 				);
 				OTHER_LDFLAGS = (
 					"$(OF_CORE_LIBS)",
@@ -2678,128 +2680,17 @@
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = NONE;
 				HEADER_SEARCH_PATHS = (
+					"../../../addons/ofxXMPP/**",
+					"../../../addons/ofxNice/**",
+					"../../../addons/ofxOsc/**",
+					"nui/**",
+					"camera/**",
+					"audio/**",
+					"../../../addons/ofxGstRTP/**",
+					"../../../addons/ofxKinect/**",
 					"$(OF_CORE_HEADERS)",
-					../../../addons/ofxGui/libs,
-					../../../addons/ofxGui/src,
-					../../../addons/ofxKinect/libs,
-					../../../addons/ofxKinect/libs/libfreenect,
-					../../../addons/ofxKinect/libs/libfreenect/include,
-					../../../addons/ofxKinect/libs/libfreenect/platform,
-					../../../addons/ofxKinect/libs/libfreenect/platform/windows,
-					../../../addons/ofxKinect/libs/libfreenect/platform/windows/inf,
-					../../../addons/ofxKinect/libs/libfreenect/platform/windows/inf/xbox,
-					nui,
-					audio,
-					../../../addons/ofxKinect/libs/libfreenect/platform/windows/inf/xbox,
-					nui,
-					audio/amd64,
-					../../../addons/ofxKinect/libs/libfreenect/platform/windows/inf/xbox,
-					nui,
-					audio/ia64,
-					../../../addons/ofxKinect/libs/libfreenect/platform/windows/inf/xbox,
-					nui,
-					audio/license,
-					../../../addons/ofxKinect/libs/libfreenect/platform/windows/inf/xbox,
-					nui,
-					"audio/license/libusb-win32",
-					../../../addons/ofxKinect/libs/libfreenect/platform/windows/inf/xbox,
-					nui,
-					audio/x86,
-					../../../addons/ofxKinect/libs/libfreenect/platform/windows/inf/xbox,
-					nui,
-					camera,
-					../../../addons/ofxKinect/libs/libfreenect/platform/windows/inf/xbox,
-					nui,
-					camera/amd64,
-					../../../addons/ofxKinect/libs/libfreenect/platform/windows/inf/xbox,
-					nui,
-					camera/ia64,
-					../../../addons/ofxKinect/libs/libfreenect/platform/windows/inf/xbox,
-					nui,
-					camera/license,
-					../../../addons/ofxKinect/libs/libfreenect/platform/windows/inf/xbox,
-					nui,
-					"camera/license/libusb-win32",
-					../../../addons/ofxKinect/libs/libfreenect/platform/windows/inf/xbox,
-					nui,
-					camera/x86,
-					../../../addons/ofxKinect/libs/libfreenect/platform/windows/inf/xbox,
-					nui,
-					motor,
-					../../../addons/ofxKinect/libs/libfreenect/platform/windows/inf/xbox,
-					nui,
-					motor/amd64,
-					../../../addons/ofxKinect/libs/libfreenect/platform/windows/inf/xbox,
-					nui,
-					motor/ia64,
-					../../../addons/ofxKinect/libs/libfreenect/platform/windows/inf/xbox,
-					nui,
-					motor/license,
-					../../../addons/ofxKinect/libs/libfreenect/platform/windows/inf/xbox,
-					nui,
-					"motor/license/libusb-win32",
-					../../../addons/ofxKinect/libs/libfreenect/platform/windows/inf/xbox,
-					nui,
-					motor/x86,
-					/Library/Frameworks/GStreamer.framework/Headers,
-					../../../addons/ofxKinect/libs/libfreenect/src,
-					"../../../addons/ofxKinect/libs/libusb-1.0",
-					"../../../addons/ofxKinect/libs/libusb-1.0/include",
-					"../../../addons/ofxKinect/libs/libusb-1.0/include/libusb-1.0",
-					"../../../addons/ofxKinect/libs/libusb-1.0/lib",
-					"../../../addons/ofxKinect/libs/libusb-1.0/lib/osx",
-					../../../addons/ofxKinect/src,
-					../../../addons/ofxOsc/libs,
-					../../../addons/ofxOsc/libs/oscpack,
-					../../../addons/ofxOsc/libs/oscpack/src,
-					../../../addons/ofxOsc/libs/oscpack/src/ip,
-					../../../addons/ofxOsc/libs/oscpack/src/ip/posix,
-					../../../addons/ofxOsc/libs/oscpack/src/ip/win32,
-					../../../addons/ofxOsc/libs/oscpack/src/osc,
-					../../../addons/ofxOsc/src,
-					../../../addons/ofxOpenCv/libs,
-					../../../addons/ofxOpenCv/libs/opencv,
-					../../../addons/ofxOpenCv/libs/opencv/include,
-					../../../addons/ofxOpenCv/libs/opencv/include/opencv,
-					../../../addons/ofxOpenCv/libs/opencv/include/opencv2,
-					../../../addons/ofxOpenCv/libs/opencv/include/opencv2/calib3d,
-					../../../addons/ofxOpenCv/libs/opencv/include/opencv2/contrib,
-					../../../addons/ofxOpenCv/libs/opencv/include/opencv2/core,
-					../../../addons/ofxOpenCv/libs/opencv/include/opencv2/features2d,
-					../../../addons/ofxOpenCv/libs/opencv/include/opencv2/flann,
-					../../../addons/ofxOpenCv/libs/opencv/include/opencv2/gpu,
-					../../../addons/ofxOpenCv/libs/opencv/include/opencv2/highgui,
-					../../../addons/ofxOpenCv/libs/opencv/include/opencv2/imgproc,
-					../../../addons/ofxOpenCv/libs/opencv/include/opencv2/legacy,
-					../../../addons/ofxOpenCv/libs/opencv/include/opencv2/ml,
-					../../../addons/ofxOpenCv/libs/opencv/include/opencv2/objdetect,
-					../../../addons/ofxOpenCv/libs/opencv/include/opencv2/ts,
-					../../../addons/ofxOpenCv/libs/opencv/include/opencv2/video,
-					../../../addons/ofxOpenCv/libs/opencv/lib,
-					../../../addons/ofxOpenCv/libs/opencv/lib/linuxarmv6l,
-					../../../addons/ofxOpenCv/libs/opencv/lib/linuxarmv7l,
-					../../../addons/ofxOpenCv/libs/opencv/lib/osx,
-					../../../addons/ofxOpenCv/libs/opencv/lib/vs,
-					../../../addons/ofxOpenCv/src,
-					../../../addons/ofxXMPP/libs,
-					../../../addons/ofxXMPP/libs/strophe,
-					../../../addons/ofxXMPP/libs/strophe/include,
-					../../../addons/ofxXMPP/libs/strophe/lib,
-					../../../addons/ofxXMPP/libs/strophe/lib/osx,
-					../../../addons/ofxXMPP/src,
-					../../../addons/ofxNice/libs,
-					../../../addons/ofxNice/libs/libnice,
-					../../../addons/ofxNice/libs/libnice/include,
-					../../../addons/ofxNice/libs/libnice/include/nice,
-					../../../addons/ofxNice/libs/libnice/lib,
-					../../../addons/ofxNice/libs/libnice/lib/osx,
-					../../../addons/ofxNice/src,
-					"../../../addons/ofxGstRTP/libs/webrtc-audio-processing/src",
-					"../../../addons/ofxGstRTP/libs/**",
-					"../../../addons/ofxGstRTP/libs/snappy/**",
-					"../../../addons/ofxGstRTP/libs/snappy/src/**",
-					"../../../addons/ofxGstRTP/src/**",
-					src,
+					"../../../addons/ofxOpenCv/**",
+					"/Library/Frameworks/GStreamer.framework/Versions/1.0/Headers/**",
 				);
 				ICON = "$(ICON_NAME_DEBUG)";
 				ICON_FILE = "$(ICON_FILE_PATH)$(ICON)";
@@ -2870,6 +2761,13 @@
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_52)",
 					"\"$(SRCROOT)/../../ofxNice/libs/libnice/lib/osx\"",
 				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-D__MACOSX_CORE__",
+					"-lpthread",
+					"-mtune=native",
+					"-DWEBRTC_NS_FLOAT",
+					"-DNDEBUG",
+				);
 				OTHER_LDFLAGS = (
 					"$(OF_CORE_LIBS)",
 					"../../../addons/ofxKinect/libs/libusb-1.0/lib/osx/usb-1.0.a",
@@ -2901,130 +2799,7 @@
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../../libs/glut/lib/osx\"";
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = NONE;
-				HEADER_SEARCH_PATHS = (
-					"$(OF_CORE_HEADERS)",
-					../../../addons/ofxGui/libs,
-					../../../addons/ofxGui/src,
-					../../../addons/ofxKinect/libs,
-					../../../addons/ofxKinect/libs/libfreenect,
-					../../../addons/ofxKinect/libs/libfreenect/include,
-					../../../addons/ofxKinect/libs/libfreenect/platform,
-					../../../addons/ofxKinect/libs/libfreenect/platform/windows,
-					../../../addons/ofxKinect/libs/libfreenect/platform/windows/inf,
-					../../../addons/ofxKinect/libs/libfreenect/platform/windows/inf/xbox,
-					nui,
-					audio,
-					../../../addons/ofxKinect/libs/libfreenect/platform/windows/inf/xbox,
-					nui,
-					audio/amd64,
-					../../../addons/ofxKinect/libs/libfreenect/platform/windows/inf/xbox,
-					nui,
-					audio/ia64,
-					../../../addons/ofxKinect/libs/libfreenect/platform/windows/inf/xbox,
-					nui,
-					audio/license,
-					../../../addons/ofxKinect/libs/libfreenect/platform/windows/inf/xbox,
-					nui,
-					"audio/license/libusb-win32",
-					../../../addons/ofxKinect/libs/libfreenect/platform/windows/inf/xbox,
-					nui,
-					audio/x86,
-					../../../addons/ofxKinect/libs/libfreenect/platform/windows/inf/xbox,
-					nui,
-					camera,
-					../../../addons/ofxKinect/libs/libfreenect/platform/windows/inf/xbox,
-					nui,
-					camera/amd64,
-					../../../addons/ofxKinect/libs/libfreenect/platform/windows/inf/xbox,
-					nui,
-					camera/ia64,
-					../../../addons/ofxKinect/libs/libfreenect/platform/windows/inf/xbox,
-					nui,
-					camera/license,
-					../../../addons/ofxKinect/libs/libfreenect/platform/windows/inf/xbox,
-					nui,
-					"camera/license/libusb-win32",
-					../../../addons/ofxKinect/libs/libfreenect/platform/windows/inf/xbox,
-					nui,
-					camera/x86,
-					../../../addons/ofxKinect/libs/libfreenect/platform/windows/inf/xbox,
-					nui,
-					motor,
-					../../../addons/ofxKinect/libs/libfreenect/platform/windows/inf/xbox,
-					nui,
-					motor/amd64,
-					../../../addons/ofxKinect/libs/libfreenect/platform/windows/inf/xbox,
-					nui,
-					motor/ia64,
-					../../../addons/ofxKinect/libs/libfreenect/platform/windows/inf/xbox,
-					nui,
-					motor/license,
-					../../../addons/ofxKinect/libs/libfreenect/platform/windows/inf/xbox,
-					nui,
-					"motor/license/libusb-win32",
-					../../../addons/ofxKinect/libs/libfreenect/platform/windows/inf/xbox,
-					nui,
-					motor/x86,
-					/Library/Frameworks/GStreamer.framework/Headers,
-					../../../addons/ofxKinect/libs/libfreenect/src,
-					"../../../addons/ofxKinect/libs/libusb-1.0",
-					"../../../addons/ofxKinect/libs/libusb-1.0/include",
-					"../../../addons/ofxKinect/libs/libusb-1.0/include/libusb-1.0",
-					"../../../addons/ofxKinect/libs/libusb-1.0/lib",
-					"../../../addons/ofxKinect/libs/libusb-1.0/lib/osx",
-					../../../addons/ofxKinect/src,
-					../../../addons/ofxOsc/libs,
-					../../../addons/ofxOsc/libs/oscpack,
-					../../../addons/ofxOsc/libs/oscpack/src,
-					../../../addons/ofxOsc/libs/oscpack/src/ip,
-					../../../addons/ofxOsc/libs/oscpack/src/ip/posix,
-					../../../addons/ofxOsc/libs/oscpack/src/ip/win32,
-					../../../addons/ofxOsc/libs/oscpack/src/osc,
-					../../../addons/ofxOsc/src,
-					../../../addons/ofxOpenCv/libs,
-					../../../addons/ofxOpenCv/libs/opencv,
-					../../../addons/ofxOpenCv/libs/opencv/include,
-					../../../addons/ofxOpenCv/libs/opencv/include/opencv,
-					../../../addons/ofxOpenCv/libs/opencv/include/opencv2,
-					../../../addons/ofxOpenCv/libs/opencv/include/opencv2/calib3d,
-					../../../addons/ofxOpenCv/libs/opencv/include/opencv2/contrib,
-					../../../addons/ofxOpenCv/libs/opencv/include/opencv2/core,
-					../../../addons/ofxOpenCv/libs/opencv/include/opencv2/features2d,
-					../../../addons/ofxOpenCv/libs/opencv/include/opencv2/flann,
-					../../../addons/ofxOpenCv/libs/opencv/include/opencv2/gpu,
-					../../../addons/ofxOpenCv/libs/opencv/include/opencv2/highgui,
-					../../../addons/ofxOpenCv/libs/opencv/include/opencv2/imgproc,
-					../../../addons/ofxOpenCv/libs/opencv/include/opencv2/legacy,
-					../../../addons/ofxOpenCv/libs/opencv/include/opencv2/ml,
-					../../../addons/ofxOpenCv/libs/opencv/include/opencv2/objdetect,
-					../../../addons/ofxOpenCv/libs/opencv/include/opencv2/ts,
-					../../../addons/ofxOpenCv/libs/opencv/include/opencv2/video,
-					../../../addons/ofxOpenCv/libs/opencv/lib,
-					../../../addons/ofxOpenCv/libs/opencv/lib/linuxarmv6l,
-					../../../addons/ofxOpenCv/libs/opencv/lib/linuxarmv7l,
-					../../../addons/ofxOpenCv/libs/opencv/lib/osx,
-					../../../addons/ofxOpenCv/libs/opencv/lib/vs,
-					../../../addons/ofxOpenCv/src,
-					../../../addons/ofxXMPP/libs,
-					../../../addons/ofxXMPP/libs/strophe,
-					../../../addons/ofxXMPP/libs/strophe/include,
-					../../../addons/ofxXMPP/libs/strophe/lib,
-					../../../addons/ofxXMPP/libs/strophe/lib/osx,
-					../../../addons/ofxXMPP/src,
-					../../../addons/ofxNice/libs,
-					../../../addons/ofxNice/libs/libnice,
-					../../../addons/ofxNice/libs/libnice/include,
-					../../../addons/ofxNice/libs/libnice/include/nice,
-					../../../addons/ofxNice/libs/libnice/lib,
-					../../../addons/ofxNice/libs/libnice/lib/osx,
-					../../../addons/ofxNice/src,
-					"../../../addons/ofxGstRTP/libs/webrtc-audio-processing/src",
-					"../../../addons/ofxGstRTP/libs/**",
-					"../../../addons/ofxGstRTP/libs/snappy/**",
-					"../../../addons/ofxGstRTP/libs/snappy/src/**",
-					"../../../addons/ofxGstRTP/src/**",
-					src,
-				);
+				HEADER_SEARCH_PATHS = "";
 				ICON = "$(ICON_NAME_RELEASE)";
 				ICON_FILE = "$(ICON_FILE_PATH)$(ICON)";
 				INFOPLIST_FILE = "openFrameworks-Info.plist";
@@ -3093,6 +2868,13 @@
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_50)",
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_51)",
 					"\"$(SRCROOT)/../../ofxNice/libs/libnice/lib/osx\"",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-D__MACOSX_CORE__",
+					"-lpthread",
+					"-mtune=native",
+					"-DWEBRTC_NS_FLOAT",
+					"-DNDEBUG",
 				);
 				OTHER_LDFLAGS = (
 					"$(OF_CORE_LIBS)",
