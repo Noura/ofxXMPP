@@ -11,3 +11,4 @@ exampleWithGui/bin/data/*.xml
 **Breakpoints.xcbkptlist
 exampleWithGUI/bin/exampleWithGUIDebug.app/Contents/MacOS/exampleWithGUIDebug
 exampleWithGUI/exampleWithGUI.xcodeproj/project.xcworkspace/xcuserdata/waazamdevelopment.xcuserdatad/UserInterfaceState.xcuserstate
+exampleWithGUI/exampleWithGUI.xcodeproj/*
