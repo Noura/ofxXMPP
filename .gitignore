@@ -10,5 +10,3 @@ exampleWithGui/bin/data/*.xml
 
 **Breakpoints.xcbkptlist
 exampleWithGUI/bin/exampleWithGUIDebug.app/
-
-exampleWithGUI/exampleWithGUI.xcodeproj/*
