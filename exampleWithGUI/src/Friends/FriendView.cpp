@@ -150,3 +150,31 @@ void FriendView::drawCapabilityIcon(float x, float y) {
     ofCircle(x + FRIEND_STATE_CIRCLE_RADIUS, y + FRIEND_STATE_CIRCLE_RADIUS, 2 * FRIEND_STATE_CIRCLE_RADIUS);
     ofPopStyle();
 }
+
+bool FriendView::comparator(const ofxUIWidget * lhs, const ofxUIWidget * rhs) {
+    FriendView * fl = (FriendView*)lhs;
+    FriendView * fr = (FriendView*)rhs;
+    bool alphabetically_before = fl->user.userName.compare(fr->user.userName) <= 0;
+    int rankl = fl->status_rank();
+    int rankr = fr->status_rank();
+    
+    if (rankl == rankr) {
+        return alphabetically_before;
+    } else {
+        return rankl < rankr;
+    }
+    
+}
+
+int FriendView::status_rank() { // higher rank means less available
+    if (user.show == ofxXMPPShowAvailable) {
+        return 0;
+    } else if (user.show == ofxXMPPShowAway) {
+        return 1;
+    } else if (user.show == ofxXMPPShowDnd) {
+        return 2;
+    } else if (user.show == ofxXMPPShowXA) {
+        return 3;
+    }
+    return 4;
+}

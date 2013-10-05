@@ -44,6 +44,9 @@ public:
     static void drawXAIcon(float x, float y);
     static void drawCapabilityIcon(float x, float y);
     
+    static bool comparator(const ofxUIWidget * lhs, const ofxUIWidget * rhs);
+    int status_rank();
+    
     ofxXMPPUser user;
     
 protected:
@@ -52,6 +55,5 @@ protected:
     ofxGstXMPPRTP * rtp;
     
 };
-
 
 #endif

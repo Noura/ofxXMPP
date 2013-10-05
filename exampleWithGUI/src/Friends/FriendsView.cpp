@@ -58,11 +58,6 @@ void FriendsView::removeFriendView(ofxXMPPUser & user) {
 }
 
 void FriendsView::update() {
-    canvas->update();
-}
-
-void FriendsView::draw() {
-
     vector<ofxXMPPUser> to_add_copy;
     vector<ofxXMPPUser> to_remove_copy;
     rtp->getXMPP().lock();
@@ -84,7 +79,6 @@ void FriendsView::draw() {
         }
     }
     
-    //TODO include a method in ofxUIScrollbarCanvas to remove multiple widgets efficiently
     list<ofxUIWidget*> friends = canvas->getWidgetList();
     for (vector<ofxXMPPUser>::iterator uit = to_remove_copy.begin(); uit < to_remove_copy.end(); uit++) {
         ofxXMPPUser user = (*uit);
@@ -95,6 +89,16 @@ void FriendsView::draw() {
             }
         }
     }
+    
+    if (to_add_copy.size() > 0 || to_remove_copy.size() > 0) {
+        // FriendViewComparator c;
+        canvas->sortWidgets(&FriendView::comparator);
+    }
+    
+    canvas->update();
+}
+
+void FriendsView::draw() {
     
     canvas->draw();
     
