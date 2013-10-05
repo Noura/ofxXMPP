@@ -40,7 +40,7 @@ private:
     AppState * appState;
     ofxGstXMPPRTP * rtp;
     
-    float x, y, w, h, friend_h, legend_h;
+    float x, y, w, h, legend_h;
     float scroll_w = 30;
     ofxUIScrollbarCanvas * canvas;
     deque<ofxXMPPUser> to_remove;

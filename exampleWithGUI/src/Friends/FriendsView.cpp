@@ -16,7 +16,6 @@ FriendsView::FriendsView(float _x, float _y, float _w, float _h,
 , y(_y)
 , w(_w)
 , h(_h)
-, friend_h(20)
 , legend_h(100.0)
 , appState(_appState)
 , rtp(_rtp)
@@ -80,20 +79,19 @@ void FriendsView::draw() {
     for (vector<ofxXMPPUser>::iterator it = to_add_copy.begin(); it < to_add_copy.end(); it++) {
         ofxXMPPUser user = (*it);
         if (FriendView::isValidFriend(user)) {
-            FriendView * f = new FriendView(user, w - scroll_w, friend_h, appState, rtp);
+            FriendView * f = new FriendView(user, w - scroll_w, appState, rtp);
             canvas->addWidgetToList(f);
         }
     }
     
     //TODO include a method in ofxUIScrollbarCanvas to remove multiple widgets efficiently
-    // this is super duper inefficient right now
     list<ofxUIWidget*> friends = canvas->getWidgetList();
     for (vector<ofxXMPPUser>::iterator uit = to_remove_copy.begin(); uit < to_remove_copy.end(); uit++) {
         ofxXMPPUser user = (*uit);
         for (list<ofxUIWidget*>::iterator it = friends.begin(); it != friends.end(); it++) {
             FriendView * f = (FriendView*)(*it);
             if (f->user.userName == user.userName) {
-                canvas->removeWidgetFromList(*it);
+                canvas->removeWidgetFromList(it);
             }
         }
     }

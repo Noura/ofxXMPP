@@ -18,6 +18,8 @@
 #define FRIEND_STATE_CIRCLE_RADIUS 5
 #define FRIEND_STATE_CIRCLE_MARGIN 2
 
+#define FRIEND_HEIGHT 30
+
 #include "ofMain.h"
 #include "ofxUI.h"
 #include "ofxGstXMPPRTP.h"
@@ -27,7 +29,7 @@ class FriendView : public ofxUILabelButton {
 
 public:
     
-    FriendView(ofxXMPPUser _user, float _w, float _h, AppState * _appState, ofxGstXMPPRTP * _rtp);
+    FriendView(ofxXMPPUser _user, float _w, AppState * _appState, ofxGstXMPPRTP * _rtp);
     ~FriendView();
 
     static bool isValidFriend(const ofxXMPPUser &_user);

@@ -10,3 +10,7 @@ exampleWithGui/bin/data/*.xml
 
 **Breakpoints.xcbkptlist
 exampleWithGUI/bin/exampleWithGUIDebug.app/
+
+*.DS_Store
+
+*.xcuserdata*

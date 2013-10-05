@@ -9,12 +9,15 @@
 
 #include "FriendView.h"
  
-FriendView::FriendView(ofxXMPPUser _user, float _w, float _h, AppState * _appState, ofxGstXMPPRTP * _rtp)
-: ofxUILabelButton(formatUserName(_user.userName), false, _w, _h, OFX_UI_FONT_SMALL_SIZE, true)
+FriendView::FriendView(ofxXMPPUser _user, float _w, AppState * _appState, ofxGstXMPPRTP * _rtp)
+: ofxUILabelButton(formatUserName(_user.userName), false, _w, FRIEND_HEIGHT, OFX_UI_FONT_SMALL_SIZE, true)
 , user(_user)
 , appState(_appState)
 , rtp(_rtp) {
     ofAddListener(ofEvents().mouseReleased, this, &FriendView::onMousePressed);
+    float xIndent = 4.0 + 4 + FRIEND_STATE_CIRCLE_RADIUS;
+    label->getRect()->x = getRect()->x + xIndent;
+    label->getRect()->y = getRect()->y + 0.25 * FRIEND_HEIGHT;
 }
 
 FriendView::~FriendView() {
@@ -27,8 +30,8 @@ void FriendView::draw() {
     
     float r = FRIEND_STATE_CIRCLE_RADIUS;
     float m = FRIEND_STATE_CIRCLE_MARGIN;
-    float shape_x = rect->x + m;
-    float shape_y = rect->y + rect->height/2;
+    float shape_x = getParent()->getRect()->x + rect->x + m;
+    float shape_y = getParent()->getRect()->y + rect->y + rect->height/2;
     
     bool has_capability = false;
     for (int i = 0; i < user.capabilities.size(); i++) {
