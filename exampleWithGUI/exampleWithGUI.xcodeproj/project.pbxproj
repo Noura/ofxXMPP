@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14CC1E3C1803016100B2E60B /* YesNoDialog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14CC1E3A1803016100B2E60B /* YesNoDialog.cpp */; };
+		14CC1E3F18035EE700B2E60B /* CustomEventLabelButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14CC1E3D18035EE600B2E60B /* CustomEventLabelButton.cpp */; };
 		169d3c72fde6c5590a1616f500a456b4 /* ofxCvFloatImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7b6a03390302d5a2c9f0e4ab630ae8d6 /* ofxCvFloatImage.cpp */; };
 		1cd33e884d9e3358252e82a14dc97644 /* ofxToggle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 907c5b5e104864a2d3a2574573796b13 /* ofxToggle.cpp */; };
 		1d5f3298c2fa073628012944b1efde88 /* ofxCvContourFinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = c76de5c29bdbd2caa1dd0021a7376220 /* ofxCvContourFinder.cpp */; };
@@ -113,6 +115,10 @@
 		0cf0aa3895d28e97d8a1e4a938976234 /* ground_truth.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ground_truth.h; path = ../../ofxOpenCv/libs/opencv/include/opencv2/flann/ground_truth.h; sourceTree = SOURCE_ROOT; };
 		0fa5069d10e89116d6fdf7d0bb8bd013 /* strophepp.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = strophepp.h; path = ../libs/strophe/include/strophepp.h; sourceTree = SOURCE_ROOT; };
 		114b872696817cc33990fc83feb1259e /* imgproc.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = imgproc.hpp; path = ../../ofxOpenCv/libs/opencv/include/opencv2/imgproc/imgproc.hpp; sourceTree = SOURCE_ROOT; };
+		14CC1E3A1803016100B2E60B /* YesNoDialog.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = YesNoDialog.cpp; sourceTree = "<group>"; };
+		14CC1E3B1803016100B2E60B /* YesNoDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YesNoDialog.h; sourceTree = "<group>"; };
+		14CC1E3D18035EE600B2E60B /* CustomEventLabelButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CustomEventLabelButton.cpp; sourceTree = "<group>"; };
+		14CC1E3E18035EE600B2E60B /* CustomEventLabelButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomEventLabelButton.h; sourceTree = "<group>"; };
 		15f2c6477a769c03a56d1401690aafec /* ofxSlider.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxSlider.cpp; path = ../../ofxGui/src/ofxSlider.cpp; sourceTree = SOURCE_ROOT; };
 		17e65988300fbd9aaa2cd0ca7aad0cfc /* ofxGui.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxGui.h; path = ../../ofxGui/src/ofxGui.h; sourceTree = SOURCE_ROOT; };
 		1c0da2561397a7de0246858bd5380c28 /* ofxGuiGroup.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxGuiGroup.h; path = ../../ofxGui/src/ofxGuiGroup.h; sourceTree = SOURCE_ROOT; };
@@ -916,6 +922,10 @@
 				4E936DA217DE5B200089DAA0 /* GUI.cpp */,
 				4E84EEAE17DFAF1B006081FE /* AppState.h */,
 				4E84EEB117DFB574006081FE /* AppState.cpp */,
+				14CC1E3A1803016100B2E60B /* YesNoDialog.cpp */,
+				14CC1E3B1803016100B2E60B /* YesNoDialog.h */,
+				14CC1E3D18035EE600B2E60B /* CustomEventLabelButton.cpp */,
+				14CC1E3E18035EE600B2E60B /* CustomEventLabelButton.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -1218,6 +1228,8 @@
 				4EEFBF3A17E1117E0025DF3E /* tinyxmlparser.cpp in Sources */,
 				4EEFBF3B17E1117E0025DF3E /* ofxXmlSettings.cpp in Sources */,
 				4EAC632F17E7B5FE0078B916 /* FriendView.cpp in Sources */,
+				14CC1E3C1803016100B2E60B /* YesNoDialog.cpp in Sources */,
+				14CC1E3F18035EE700B2E60B /* CustomEventLabelButton.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

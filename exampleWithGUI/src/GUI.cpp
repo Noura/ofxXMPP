@@ -10,9 +10,11 @@
 GUI::GUI(AppState * _appState, ofxXMPP * _xmpp)
 : appState(_appState)
 , xmpp(_xmpp)
+, addTempMsg(false)
 , friendsView(NULL)
 , messages(NULL)
-, messagesView(NULL) {
+, messagesView(NULL)
+, callingDialog(NULL) {
 }
 
 GUI::~GUI() {
@@ -21,6 +23,8 @@ GUI::~GUI() {
     delete friendsView;
     delete messagesView;
     delete messages;
+    if (callingDialog) ofRemoveListener(callingDialog->answer, this, &GUI::onCallingDialogAnswer);
+    delete callingDialog;
 }
 
 void GUI::setup() {    
@@ -33,12 +37,19 @@ void GUI::setup() {
 
 void GUI::update() {
     friendsView->update();
-    if (messagesView) messagesView->update();
+    if (messagesView) {
+        messagesView->update();
+        if (addTempMsg) {
+            onNewRemoteMessage(tempMsg);
+            addTempMsg = false;
+        }
+    }
 }
 
 void GUI::draw() {
     friendsView->draw();
     if (messagesView) messagesView->draw();
+    if (callingDialog) callingDialog->draw();
 }
 
 void GUI::onChatContactChange(ofxXMPPUser & _user) {
@@ -53,12 +64,58 @@ void GUI::onChatContactChange(ofxXMPPUser & _user) {
 }
 
 void GUI::onNewRemoteMessage(ofxXMPPMessage & _msg) {
-    // check if this message is from our current chat contact
-    // (the two email addresses will be the same, but _msg.from might have extra junk at the end)
-    int n = MIN(_msg.from.length(), appState->chatContact.userName.length());
-    if ( n > 0 && _msg.from.compare(0, n, appState->chatContact.userName) == 0 ) {
+    if (isSameXMPPUserName(_msg.from, appState->chatContact.userName)) {
         messages->addMessage(_msg);
     } else {
-        // TODO make a popup to suggest changing convos
+        tempMsg = _msg;
+        if (callingDialog) {
+            ofRemoveListener(callingDialog->answer, this, &GUI::onCallingDialogAnswer);
+            delete callingDialog;
+            callingDialog = NULL;
+        }
+        string dialog = "";
+        dialog += _msg.from.substr();
+        dialog += " just messaged you. Do you want to switch to a conversation with them?";
+        callingDialog = new YesNoDialog(700, 50, 300, 200, dialog);
+        callingDialog->setup();
+        ofAddListener(callingDialog->answer, this, &GUI::onCallingDialogAnswer);
     }
+}
+
+bool GUI::isSameXMPPUserName(string userName1, string userName2) {
+    // sometimes email addresses have extra junk characters at the end
+    // this checks to see if one email address is the prefix of the other
+    if (userName1.size() == 0 || userName2.size() == 0) {
+        return false;
+    }
+    string longNames[] = {userName1, userName2};
+    string shortNames[2];
+    for (int i = 0; i < 2; i++) {
+        string s = longNames[i];
+        int n = 0;
+        while (s.size() > n && s.at(n) != '/') {
+            n++;
+        }
+        shortNames[i] = s.substr(0, n);
+    }
+    return shortNames[0].compare(shortNames[1]) == 0;
+}
+
+void GUI::onCallingDialogAnswer(bool & _answer) {
+    // TODO what if user messages you and then suddenly signs out?
+    if (_answer) { // user said yes
+        ofxXMPPUser user;
+        vector<ofxXMPPUser> friends = xmpp->getFriends();
+        for (vector<ofxXMPPUser>::iterator it = friends.begin(); it != friends.end(); it++) {
+            if (isSameXMPPUserName(tempMsg.from, it->userName)) {
+                user = (*it);
+                appState->setChatContact(user);
+                addTempMsg = true;
+                break;
+            }
+        }
+    }
+    ofRemoveListener(callingDialog->answer, this, &GUI::onCallingDialogAnswer);
+    delete callingDialog;
+    callingDialog = NULL;
 }

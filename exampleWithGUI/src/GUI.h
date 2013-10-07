@@ -13,6 +13,7 @@
 #include "Messages/Messages.h"
 #include "Messages/MessagesView.h"
 #include "Friends/FriendsView.h"
+#include "YesNoDialog.h"
 
 #define GUI_FRIENDS_WIDTH 300
 #define GUI_MESSAGES_WIDTH 300
@@ -30,6 +31,9 @@ public:
     
     void onChatContactChange(ofxXMPPUser & _user);
     void onNewRemoteMessage(ofxXMPPMessage & _msg);
+    void onCallingDialogAnswer(bool & _answer);
+    
+    static bool isSameXMPPUserName(string userName1, string userName2);
     
 private:
     
@@ -40,6 +44,10 @@ private:
     
     Messages * messages;
     MessagesView * messagesView;
+    
+    YesNoDialog * callingDialog;
+    ofxXMPPMessage tempMsg;
+    bool addTempMsg;
     
 };
 
