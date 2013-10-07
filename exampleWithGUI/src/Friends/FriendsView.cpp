@@ -43,6 +43,8 @@ void FriendsView::setup() {
     ofAddListener(xmpp->userDisconnected, this, &FriendsView::removeFriendView);
 }
 
+// TODO also update friends' changing availability statuses
+
 void FriendsView::addFriendView(ofxXMPPUser & user) {
     // this callback runs on the XMPP thread
     xmpp->lock();
@@ -79,13 +81,14 @@ void FriendsView::update() {
         }
     }
     
-    list<ofxUIWidget*> friends = canvas->getWidgetList();
     for (vector<ofxXMPPUser>::iterator uit = to_remove_copy.begin(); uit < to_remove_copy.end(); uit++) {
         ofxXMPPUser user = (*uit);
-        for (list<ofxUIWidget*>::iterator it = friends.begin(); it != friends.end(); it++) {
+        list<ofxUIWidget*> * friends = canvas->getWidgetList();
+        for (list<ofxUIWidget*>::iterator it = friends->begin(); it != friends->end(); it++) {
             FriendView * f = (FriendView*)(*it);
             if (f->user.userName == user.userName) {
                 canvas->removeWidgetFromList(it, false);
+                break;
             }
         }
     }
