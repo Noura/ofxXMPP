@@ -8,8 +8,6 @@
 #pragma once
 
 #include "ofMain.h"
-#include "ofxGstXMPPRTP.h"
-#include "ofxGstRTPUtils.h"
 #include "ofxUI.h"
 
 #include "GUI.h"
@@ -38,7 +36,7 @@ class testApp : public ofBaseApp{
     
         AppState appState;
 
-        ofxGstXMPPRTP rtp;
+        ofxXMPP xmpp;
     
 		GUI *gui;
 };

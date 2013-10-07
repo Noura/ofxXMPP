@@ -1,7 +1,6 @@
 #include "testApp.h"
 
 void testApp::setup(){
-	ofSetLogLevel(ofxGstRTPClient::LOG_NAME,OF_LOG_VERBOSE);
 
 	ofXml settings;
 	settings.load("settings.xml");
@@ -9,13 +8,13 @@ void testApp::setup(){
 	string user = settings.getValue("user");
 	string pwd = settings.getValue("pwd");
     
-	rtp.setup(0);
-	rtp.getXMPP().setCapabilities(CALL_CAPABILITY);
-	rtp.connectXMPP(server,user,pwd);
+    xmpp.setShow(ofxXMPPShowAvailable);
+    xmpp.connect(server, user, pwd);
+    xmpp.setCapabilities(CALL_CAPABILITY);
 
     appState.setCallCapability(CALL_CAPABILITY);
     
-    gui = new GUI(&appState, &rtp);
+    gui = new GUI(&appState, &xmpp);
     gui->setup();
 }
 

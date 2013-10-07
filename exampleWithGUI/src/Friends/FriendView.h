@@ -22,14 +22,13 @@
 
 #include "ofMain.h"
 #include "ofxUI.h"
-#include "ofxGstXMPPRTP.h"
 #include "AppState.h"
 
 class FriendView : public ofxUILabelButton {
 
 public:
     
-    FriendView(ofxXMPPUser _user, float _w, AppState * _appState, ofxGstXMPPRTP * _rtp);
+    FriendView(ofxXMPPUser _user, float _w, AppState * _appState, ofxXMPP * _xmpp);
     ~FriendView();
 
     static bool isValidFriend(const ofxXMPPUser &_user);
@@ -52,7 +51,7 @@ public:
 protected:
 
     AppState * appState;
-    ofxGstXMPPRTP * rtp;
+    ofxXMPP * xmpp;
     
 };
 

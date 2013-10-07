@@ -21,7 +21,7 @@ class GUI {
 
 public:
 
-    GUI(AppState * _appState, ofxGstXMPPRTP * _rtp);
+    GUI(AppState * _appState, ofxXMPP * _xmpp);
     ~GUI();
     
     void setup();
@@ -33,7 +33,7 @@ public:
 private:
     
     AppState * appState;
-    ofxGstXMPPRTP * rtp;
+    ofxXMPP * xmpp;
 
     FriendsView * friendsView;
     

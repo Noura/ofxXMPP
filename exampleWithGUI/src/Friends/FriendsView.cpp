@@ -11,20 +11,20 @@
 #include "FriendsView.h"
 
 FriendsView::FriendsView(float _x, float _y, float _w, float _h,
-                         AppState * _appState, ofxGstXMPPRTP * _rtp)
+                         AppState * _appState, ofxXMPP * _xmpp)
 : x(_x)
 , y(_y)
 , w(_w)
 , h(_h)
 , legend_h(100.0)
 , appState(_appState)
-, rtp(_rtp)
+, xmpp(_xmpp)
 , canvas(NULL) {
 }
 
 FriendsView::~FriendsView() {
-    ofRemoveListener(rtp->getXMPP().userConnected, this, &FriendsView::addFriendView);
-    ofRemoveListener(rtp->getXMPP().userDisconnected, this, &FriendsView::removeFriendView);
+    ofRemoveListener(xmpp->userConnected, this, &FriendsView::addFriendView);
+    ofRemoveListener(xmpp->userDisconnected, this, &FriendsView::removeFriendView);
     delete canvas;
 }
 
@@ -33,34 +33,34 @@ void FriendsView::setup() {
     canvas->setSnapping(false);
     canvas->setScrollbarImage("GUI/scrollbar.png");
     
-    const vector<ofxXMPPUser> & friends = rtp->getXMPP().getFriends();
+    const vector<ofxXMPPUser> & friends = xmpp->getFriends();
     for (int i = 0; i < friends.size(); i++) {
         ofxXMPPUser user = friends[i];
         addFriendView(user);
     }
 
-    ofAddListener(rtp->getXMPP().userConnected, this, &FriendsView::addFriendView);
-    ofAddListener(rtp->getXMPP().userDisconnected, this, &FriendsView::removeFriendView);
+    ofAddListener(xmpp->userConnected, this, &FriendsView::addFriendView);
+    ofAddListener(xmpp->userDisconnected, this, &FriendsView::removeFriendView);
 }
 
 void FriendsView::addFriendView(ofxXMPPUser & user) {
     // this callback runs on the XMPP thread
-    rtp->getXMPP().lock();
+    xmpp->lock();
     to_add.push_back(user);
-    rtp->getXMPP().unlock();
+    xmpp->unlock();
 }
 
 void FriendsView::removeFriendView(ofxXMPPUser & user) {
     // this callback runs on the XMPP thread
-    rtp->getXMPP().lock();
+    xmpp->lock();
     to_remove.push_back(user);
-    rtp->getXMPP().unlock();
+    xmpp->unlock();
 }
 
 void FriendsView::update() {
     vector<ofxXMPPUser> to_add_copy;
     vector<ofxXMPPUser> to_remove_copy;
-    rtp->getXMPP().lock();
+    xmpp->lock();
     while (!to_add.empty()) {
         to_add_copy.push_back(to_add.front());
         to_add.pop_front();
@@ -69,12 +69,12 @@ void FriendsView::update() {
         to_remove_copy.push_back(to_remove.front());
         to_remove.pop_front();
     }
-    rtp->getXMPP().unlock();
+    xmpp->unlock();
     
     for (vector<ofxXMPPUser>::iterator it = to_add_copy.begin(); it < to_add_copy.end(); it++) {
         ofxXMPPUser user = (*it);
         if (FriendView::isValidFriend(user)) {
-            FriendView * f = new FriendView(user, w - scroll_w, appState, rtp);
+            FriendView * f = new FriendView(user, w - scroll_w, appState, xmpp);
             canvas->addWidgetToList(f);
         }
     }

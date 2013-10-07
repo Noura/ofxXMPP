@@ -14,7 +14,6 @@
 #define MESSAGES_MAX_NUM 25
 
 #include "ofMain.h"
-#include "ofxGstXMPPRTP.h"
 
 #include "AppState.h"
 
@@ -24,7 +23,7 @@ class Messages {
     
 public:
     
-    Messages(AppState * _appState, ofxGstXMPPRTP * _rtp);
+    Messages(AppState * _appState, ofxXMPP * _xmpp);
     ~Messages();
     void setView(MessagesView * view);
     
@@ -37,7 +36,7 @@ public:
 private:
 
     AppState * appState;
-    ofxGstXMPPRTP * rtp;
+    ofxXMPP * xmpp;
     MessagesView * view;
     
 };

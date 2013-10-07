@@ -11,21 +11,20 @@
 #include "MessagesView.h"
 #include "Messages.h"
 
-MessagesView::MessagesView(float _x, float _y, float _w, float _h, AppState * _appState, ofxGstXMPPRTP * _rtp)
+MessagesView::MessagesView(float _x, float _y, float _w, float _h, AppState * _appState, ofxXMPP * _xmpp)
 : x(_x)
 , y(_y)
 , w(_w)
 , h(_h)
 , title_h(30.0)
 , appState(_appState)
-, rtp(_rtp)
+, xmpp(_xmpp)
 , call_button_label("Call")
 , messagesCanvas(NULL)
 , composingCanvas(NULL)
 , composingMsg(NULL)
 , callButton(NULL)
-, callButtonCanvas(NULL)
-, messagesHeight(0) {
+, callButtonCanvas(NULL) {
     canvas_h = h * CONVERSATION_PERCENT_HEIGHT/100.0 - title_h;
 }
 
@@ -85,11 +84,7 @@ void MessagesView::addMessage(ofxXMPPMessage &msg) {
     string text = formatMessage(msg);
     ofxUITextArea * messageView = new ofxUITextArea(text, text, w - OFX_UI_MIN_SCROLLBAR_W - 2.0);
 
-    messagesCanvas->addWidgetDown(messageView);
-    messagesHeight += messageView->getRect()->height + 6.0;
-    messagesCanvas->setContentHeight(MAX(messagesHeight, messagesCanvas->getContentHeight()));
-    messageView->setVisible(true);
-    messagesCanvas->draw();
+    messagesCanvas->addWidgetToList(messageView);
     messagesCanvas->scrollToBottom();
 }
 

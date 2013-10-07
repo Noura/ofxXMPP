@@ -26,7 +26,7 @@ class MessagesView {
   
 public:
     
-    MessagesView(float _x, float _y, float _w, float _h, AppState * _appState, ofxGstXMPPRTP * _rtp);
+    MessagesView(float _x, float _y, float _w, float _h, AppState * _appState, ofxXMPP * _xmpp);
     ~MessagesView();
     void setModel(Messages * _model);
 
@@ -42,13 +42,12 @@ public:
 private:
     
     AppState * appState;
-    ofxGstXMPPRTP * rtp;
+    ofxXMPP * xmpp;
     Messages * model;
     
     float x, y, w, h, canvas_h, title_h;
     string title;
     ofxUIScrollbarCanvas * messagesCanvas;
-    float messagesHeight; // must tell messagesCanvas the height of its content
     ofxUICanvas * composingCanvas;
     ofxUITextInput * composingMsg;
     ofxUICanvas * callButtonCanvas;

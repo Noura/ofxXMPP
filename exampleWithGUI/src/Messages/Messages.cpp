@@ -11,15 +11,15 @@
 #include "Messages.h"
 #include "MessagesView.h"
 
-Messages::Messages(AppState * _appState, ofxGstXMPPRTP * _rtp)
+Messages::Messages(AppState * _appState, ofxXMPP * _xmpp)
 : appState(_appState)
-, rtp(_rtp)
+, xmpp(_xmpp)
 , view(NULL) {
-    ofAddListener(rtp->getXMPP().newMessage, this, &Messages::addMessage);
+    ofAddListener(xmpp->newMessage, this, &Messages::addMessage);
 }
 
 Messages::~Messages() {
-    ofRemoveListener(rtp->getXMPP().newMessage, this, &Messages::addMessage);
+    ofRemoveListener(xmpp->newMessage, this, &Messages::addMessage);
     if (view) ofRemoveListener(view->newLocalMessage, this, &Messages::onNewLocalMessage);
 }
 
@@ -40,5 +40,5 @@ void Messages::onNewLocalMessage(string & msg) {
     message.from = "me";
     addMessage(message);
 
-    rtp->getXMPP().sendMessage(appState->chatContact.userName, message.body);
+    xmpp->sendMessage(appState->chatContact.userName, message.body);
 }

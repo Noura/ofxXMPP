@@ -9,11 +9,11 @@
 
 #include "FriendView.h"
  
-FriendView::FriendView(ofxXMPPUser _user, float _w, AppState * _appState, ofxGstXMPPRTP * _rtp)
+FriendView::FriendView(ofxXMPPUser _user, float _w, AppState * _appState, ofxXMPP * _xmpp)
 : ofxUILabelButton(formatUserName(_user.userName), false, _w, FRIEND_HEIGHT, OFX_UI_FONT_SMALL_SIZE, true)
 , user(_user)
 , appState(_appState)
-, rtp(_rtp) {
+, xmpp(_xmpp) {
     ofAddListener(ofEvents().mouseReleased, this, &FriendView::onMousePressed);
     float xIndent = 4.0 + 4 + FRIEND_STATE_CIRCLE_RADIUS;
     label->getRect()->x = getRect()->x + xIndent;

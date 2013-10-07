@@ -14,7 +14,7 @@
 #ifndef example_all_AppState_h
 #define example_all_AppState_h
 
-#include "ofxGstXMPPRTP.h"
+#include "ofxXMPP.h"
 
 class AppState {
     

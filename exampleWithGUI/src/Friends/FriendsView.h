@@ -17,7 +17,6 @@ class GUI;
 #include "ofMain.h"
 #include "ofxUI.h"
 
-#include "ofxGstXMPPRTP.h"
 #include "AppState.h"
 #include "FriendView.h"
 
@@ -25,8 +24,7 @@ class FriendsView {
     
 public:
     
-    FriendsView(float _x, float _y, float _w, float _h, AppState * _appState,
-                ofxGstXMPPRTP * _rtp);
+    FriendsView(float _x, float _y, float _w, float _h, AppState * _appState, ofxXMPP * _xmpp);
     ~FriendsView();
 
     void addFriendView(ofxXMPPUser & user);
@@ -38,7 +36,7 @@ public:
 private:
     
     AppState * appState;
-    ofxGstXMPPRTP * rtp;
+    ofxXMPP * xmpp;
     
     float x, y, w, h, legend_h;
     float scroll_w = 30;
