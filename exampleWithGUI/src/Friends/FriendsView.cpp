@@ -75,7 +75,7 @@ void FriendsView::update() {
         ofxXMPPUser user = (*it);
         if (FriendView::isValidFriend(user)) {
             FriendView * f = new FriendView(user, w - scroll_w, appState, xmpp);
-            canvas->addWidgetToList(f);
+            canvas->addWidgetToList(f, false);
         }
     }
     
@@ -85,16 +85,16 @@ void FriendsView::update() {
         for (list<ofxUIWidget*>::iterator it = friends.begin(); it != friends.end(); it++) {
             FriendView * f = (FriendView*)(*it);
             if (f->user.userName == user.userName) {
-                canvas->removeWidgetFromList(it);
+                canvas->removeWidgetFromList(it, false);
             }
         }
     }
     
     if (to_add_copy.size() > 0 || to_remove_copy.size() > 0) {
-        // FriendViewComparator c;
         canvas->sortWidgets(&FriendView::comparator);
     }
     
+    canvas->reflowWidgets();
     canvas->update();
 }
 
