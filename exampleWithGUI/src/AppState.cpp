@@ -15,6 +15,7 @@
 
 AppState::AppState()
 : callCapability("") {
+    chatContact.userName = "";
 }
 
 void AppState::setChatContact(ofxXMPPUser _user) {

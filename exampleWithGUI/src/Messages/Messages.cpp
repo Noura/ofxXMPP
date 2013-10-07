@@ -15,11 +15,9 @@ Messages::Messages(AppState * _appState, ofxXMPP * _xmpp)
 : appState(_appState)
 , xmpp(_xmpp)
 , view(NULL) {
-    ofAddListener(xmpp->newMessage, this, &Messages::addMessage);
 }
 
 Messages::~Messages() {
-    ofRemoveListener(xmpp->newMessage, this, &Messages::addMessage);
     if (view) ofRemoveListener(view->newLocalMessage, this, &Messages::onNewLocalMessage);
 }
 

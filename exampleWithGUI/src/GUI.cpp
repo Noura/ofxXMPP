@@ -17,6 +17,7 @@ GUI::GUI(AppState * _appState, ofxXMPP * _xmpp)
 
 GUI::~GUI() {
     ofRemoveListener(appState->chatContactChange, this, &GUI::onChatContactChange);
+    ofRemoveListener(xmpp->newMessage, this, &GUI::onNewRemoteMessage);
     delete friendsView;
     delete messagesView;
     delete messages;
@@ -27,6 +28,7 @@ void GUI::setup() {
     friendsView->setup();
     
     ofAddListener(appState->chatContactChange, this, &GUI::onChatContactChange);
+    ofAddListener(xmpp->newMessage, this, &GUI::onNewRemoteMessage);
 }
 
 void GUI::update() {
@@ -48,4 +50,15 @@ void GUI::onChatContactChange(ofxXMPPUser & _user) {
     messages->setView(messagesView);
     messagesView->setModel(messages);
     messagesView->setup();
+}
+
+void GUI::onNewRemoteMessage(ofxXMPPMessage & _msg) {
+    // check if this message is from our current chat contact
+    // (the two email addresses will be the same, but _msg.from might have extra junk at the end)
+    int n = MIN(_msg.from.length(), appState->chatContact.userName.length());
+    if ( n > 0 && _msg.from.compare(0, n, appState->chatContact.userName) == 0 ) {
+        messages->addMessage(_msg);
+    } else {
+        // TODO make a popup to suggest changing convos
+    }
 }

@@ -29,6 +29,7 @@ public:
     void draw();
     
     void onChatContactChange(ofxXMPPUser & _user);
+    void onNewRemoteMessage(ofxXMPPMessage & _msg);
     
 private:
     
