@@ -23,3 +23,5 @@ void CustomEventLabelButton::onMousePressed(ofMouseEventArgs &e) {
     bool value = true;
     ofNotifyEvent(mousePressed, value, this);
 }
+
+void CustomEventLabelButton::triggerEvent() { }
