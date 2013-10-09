@@ -89,7 +89,12 @@ void MessagesView::addMessage(ofxXMPPMessage &msg) {
 }
 
 string MessagesView::formatMessage(ofxXMPPMessage msg) {
-    return msg.from + ": " + msg.body;
+    string from = msg.from.substr();
+    int i = from.find('@');
+    if (i < from.size()) {
+        from = from.substr(0, i);
+    }
+    return from + ": " + msg.body;
 }
 
 void MessagesView::draw() {
