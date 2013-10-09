@@ -11,7 +11,7 @@
 #include "Messages.h"
 #include "MessagesView.h"
 
-Messages::Messages(AppState * _appState, ofxXMPP * _xmpp)
+Messages::Messages(SharedStateBundle * _appState, ofxXMPP * _xmpp)
 : appState(_appState)
 , xmpp(_xmpp)
 , view(NULL) {

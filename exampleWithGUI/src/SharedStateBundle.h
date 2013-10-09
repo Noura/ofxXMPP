@@ -1,5 +1,5 @@
 /*
- * AppState.h
+ * SharedStateBundle.h
  *
  * Application state that is shared across multiple classes should be stored
  * here. Member variables are public for convenient reading, but for writing
@@ -16,11 +16,11 @@
 
 #include "ofxXMPP.h"
 
-class AppState {
+class SharedStateBundle {
     
 public:
     
-    AppState();
+    SharedStateBundle();
     
     ofxXMPPUser chatContact;
     ofEvent<ofxXMPPUser> chatContactChange;

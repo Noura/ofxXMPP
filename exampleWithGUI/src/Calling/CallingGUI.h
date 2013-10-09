@@ -8,7 +8,7 @@
 #ifndef example_all_CALLING_GUI_H
 #define example_all_CALLING_GUI_H
 
-#include "AppState.h"
+#include "SharedStateBundle.h"
 #include "ofxUI.h"
 #include "Messages.h"
 #include "MessagesView.h"
@@ -22,7 +22,7 @@ class CallingGUI {
 
 public:
 
-    CallingGUI(AppState * _appState, ofxXMPP * _xmpp);
+    CallingGUI(SharedStateBundle * _appState, ofxXMPP * _xmpp);
     ~CallingGUI();
     
     void setup();
@@ -37,7 +37,7 @@ public:
     
 private:
     
-    AppState * appState;
+    SharedStateBundle * appState;
     ofxXMPP * xmpp;
 
     FriendsView * friendsView;

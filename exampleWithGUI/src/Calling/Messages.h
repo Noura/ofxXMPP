@@ -15,7 +15,7 @@
 
 #include "ofMain.h"
 
-#include "AppState.h"
+#include "SharedStateBundle.h"
 
 class MessagesView;
 
@@ -23,7 +23,7 @@ class Messages {
     
 public:
     
-    Messages(AppState * _appState, ofxXMPP * _xmpp);
+    Messages(SharedStateBundle * _appState, ofxXMPP * _xmpp);
     ~Messages();
     void setView(MessagesView * view);
     
@@ -35,7 +35,7 @@ public:
     
 private:
 
-    AppState * appState;
+    SharedStateBundle * appState;
     ofxXMPP * xmpp;
     MessagesView * view;
     

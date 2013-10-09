@@ -6,7 +6,7 @@
 
 #include "CallingGUI.h"
 
-CallingGUI::CallingGUI(AppState * _appState, ofxXMPP * _xmpp)
+CallingGUI::CallingGUI(SharedStateBundle * _appState, ofxXMPP * _xmpp)
 : appState(_appState)
 , xmpp(_xmpp)
 , addTempMsg(false)

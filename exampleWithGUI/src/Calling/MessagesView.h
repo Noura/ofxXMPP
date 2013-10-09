@@ -14,7 +14,7 @@
 #include "ofMain.h"
 #include "ofxUI.h"
 
-#include "AppState.h"
+#include "SharedStateBundle.h"
 #include "Messages.h"
 #include "FriendView.h"
 
@@ -26,7 +26,7 @@ class MessagesView {
   
 public:
     
-    MessagesView(float _x, float _y, float _w, float _h, AppState * _appState, ofxXMPP * _xmpp);
+    MessagesView(float _x, float _y, float _w, float _h, SharedStateBundle * _appState, ofxXMPP * _xmpp);
     ~MessagesView();
     void setModel(Messages * _model);
 
@@ -41,7 +41,7 @@ public:
     
 private:
     
-    AppState * appState;
+    SharedStateBundle * appState;
     ofxXMPP * xmpp;
     Messages * model;
     

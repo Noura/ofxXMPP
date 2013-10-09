@@ -32,7 +32,7 @@
 #include "ofxXMPP.h"
 
 #include "CallingGUI.h"
-#include "AppState.h"
+#include "SharedStateBundle.h"
 
 class ofxXMPPCaller {
 public:
@@ -47,7 +47,7 @@ public:
     //TODO do something here
     void onConnectionStateChanged(ofxXMPPConnectionState & connectionState);
     
-    AppState appState;
+    SharedStateBundle appState;
     
     ofxXMPP xmpp;
     

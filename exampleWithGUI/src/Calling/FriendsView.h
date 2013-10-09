@@ -15,14 +15,14 @@ class CallingGUI;
 #include "ofMain.h"
 #include "ofxUI.h"
 
-#include "AppState.h"
+#include "SharedStateBundle.h"
 #include "FriendView.h"
 
 class FriendsView {
     
 public:
     
-    FriendsView(float _x, float _y, float _w, float _h, AppState * _appState, ofxXMPP * _xmpp);
+    FriendsView(float _x, float _y, float _w, float _h, SharedStateBundle * _appState, ofxXMPP * _xmpp);
     ~FriendsView();
 
     void addFriendView(ofxXMPPUser & user);
@@ -33,7 +33,7 @@ public:
 
 private:
     
-    AppState * appState;
+    SharedStateBundle * appState;
     ofxXMPP * xmpp;
     
     float x, y, w, h, legend_h;

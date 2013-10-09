@@ -14,7 +14,7 @@
 		255a7b680dc81e543c875794909009cd /* usb_libusb10.c in Sources */ = {isa = PBXBuildFile; fileRef = 28f9707464ba3ff98e05096cb8975bfc /* usb_libusb10.c */; };
 		483908258d00b98b4be69f0765fb3433 /* ofxLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 78d67a00eb899fac0943059784f8212a /* ofxLabel.cpp */; };
 		49beeb2dfa5319d55aa6899f53b95313 /* tilt.c in Sources */ = {isa = PBXBuildFile; fileRef = bf2f2aa872288d30f53983efd0e677a0 /* tilt.c */; };
-		4E84EEB217DFB574006081FE /* AppState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4E84EEB117DFB574006081FE /* AppState.cpp */; };
+		4E84EEB217DFB574006081FE /* SharedStateBundle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4E84EEB117DFB574006081FE /* SharedStateBundle.cpp */; };
 		4EC3857D1805E61200FBAB76 /* CallingGUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4EC385731805E61200FBAB76 /* CallingGUI.cpp */; };
 		4EC3857E1805E61200FBAB76 /* FriendsView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4EC385751805E61200FBAB76 /* FriendsView.cpp */; };
 		4EC3857F1805E61200FBAB76 /* FriendView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4EC385771805E61200FBAB76 /* FriendView.cpp */; };
@@ -134,8 +134,8 @@
 		45410dd818bb205166e67e89e7443a54 /* any.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = any.h; path = ../../ofxOpenCv/libs/opencv/include/opencv2/flann/any.h; sourceTree = SOURCE_ROOT; };
 		45f38573a0b0deec8bbc7a2c680cffc4 /* simplex_downhill.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = simplex_downhill.h; path = ../../ofxOpenCv/libs/opencv/include/opencv2/flann/simplex_downhill.h; sourceTree = SOURCE_ROOT; };
 		49effcf36cf194cce0e1faabecebbc9b /* kdtree_index.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = kdtree_index.h; path = ../../ofxOpenCv/libs/opencv/include/opencv2/flann/kdtree_index.h; sourceTree = SOURCE_ROOT; };
-		4E84EEAE17DFAF1B006081FE /* AppState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppState.h; sourceTree = "<group>"; };
-		4E84EEB117DFB574006081FE /* AppState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppState.cpp; sourceTree = "<group>"; };
+		4E84EEAE17DFAF1B006081FE /* SharedStateBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedStateBundle.h; sourceTree = "<group>"; };
+		4E84EEB117DFB574006081FE /* SharedStateBundle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SharedStateBundle.cpp; sourceTree = "<group>"; };
 		4EAC631B17E794510078B916 /* exampleWithGUIDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = exampleWithGUIDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EBE0FEA17FF3C90002E68CA /* ofxUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxUI.h; sourceTree = "<group>"; };
 		4EBE0FEB17FF3C90002E68CA /* ofxUI2DGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxUI2DGraph.h; sourceTree = "<group>"; };
@@ -922,8 +922,8 @@
 				DA4B69DA17CF981C009F813D /* testApp.cpp */,
 				DA4B69DB17CF981C009F813D /* testApp.h */,
 				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
-				4E84EEAE17DFAF1B006081FE /* AppState.h */,
-				4E84EEB117DFB574006081FE /* AppState.cpp */,
+				4E84EEAE17DFAF1B006081FE /* SharedStateBundle.h */,
+				4E84EEB117DFB574006081FE /* SharedStateBundle.cpp */,
 				4EC3858A1805F43000FBAB76 /* ofxXMPPCaller.cpp */,
 				4EC3858B1805F43000FBAB76 /* ofxXMPPCaller.h */,
 			);
@@ -1225,7 +1225,7 @@
 				DA4B6A1C17CF99AA009F813D /* ofxOscBundle.cpp in Sources */,
 				4EC385811805E61200FBAB76 /* MessagesView.cpp in Sources */,
 				DA4B6A1D17CF99AA009F813D /* ofxOscMessage.cpp in Sources */,
-				4E84EEB217DFB574006081FE /* AppState.cpp in Sources */,
+				4E84EEB217DFB574006081FE /* SharedStateBundle.cpp in Sources */,
 				4EEFBF3817E1117E0025DF3E /* tinyxml.cpp in Sources */,
 				4EEFBF3917E1117E0025DF3E /* tinyxmlerror.cpp in Sources */,
 				4EEFBF3A17E1117E0025DF3E /* tinyxmlparser.cpp in Sources */,

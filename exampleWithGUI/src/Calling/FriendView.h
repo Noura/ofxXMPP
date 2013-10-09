@@ -23,13 +23,13 @@
 
 #include "ofMain.h"
 #include "ofxUI.h"
-#include "AppState.h"
+#include "SharedStateBundle.h"
 
 class FriendView : public ofxUILabelButton {
 
 public:
     
-    FriendView(ofxXMPPUser _user, float _w, AppState * _appState, ofxXMPP * _xmpp);
+    FriendView(ofxXMPPUser _user, float _w, SharedStateBundle * _appState, ofxXMPP * _xmpp);
     ~FriendView();
 
     void draw();
@@ -50,7 +50,7 @@ public:
     static string formatUserName(string _name);
     
     /** drawing user availability icons and a legend to explain the icons */
-    static void drawLegend(float x, float y, AppState * _appState);
+    static void drawLegend(float x, float y, SharedStateBundle * _appState);
     static void drawAvailableIcon(float x, float y);
     static void drawAwayIcon(float x, float y);
     static void drawDndIcon(float x, float y);
@@ -64,7 +64,7 @@ public:
     
 protected:
 
-    AppState * appState;
+    SharedStateBundle * appState;
     ofxXMPP * xmpp;
     
 };

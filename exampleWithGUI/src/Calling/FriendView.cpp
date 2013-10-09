@@ -9,7 +9,7 @@
 
 #include "FriendView.h"
  
-FriendView::FriendView(ofxXMPPUser _user, float _w, AppState * _appState, ofxXMPP * _xmpp)
+FriendView::FriendView(ofxXMPPUser _user, float _w, SharedStateBundle * _appState, ofxXMPP * _xmpp)
 : ofxUILabelButton(formatUserName(_user.userName), false, _w, FRIEND_HEIGHT, OFX_UI_FONT_SMALL_SIZE, true)
 , user(_user)
 , appState(_appState)
@@ -88,7 +88,7 @@ string FriendView::formatUserName(string _name) {
     return name;
 }
 
-void FriendView::drawLegend(float x, float y, AppState * _appState) {
+void FriendView::drawLegend(float x, float y, SharedStateBundle * _appState) {
     //TODO remove magic numbers
     float margin = 2.0;
     float lineH = 18.0;

@@ -1,5 +1,5 @@
 /*
- * AppState.cpp
+ * SharedStateBundle.cpp
  *
  * Application state that is shared across multiple classes should be stored
  * here. Member variables are public for convenient reading, but for writing
@@ -11,19 +11,19 @@
  *      Author: noura
  */
 
-#include "AppState.h"
+#include "SharedStateBundle.h"
 
-AppState::AppState()
+SharedStateBundle::SharedStateBundle()
 : callCapability("") {
     chatContact.userName = "";
 }
 
-void AppState::setChatContact(ofxXMPPUser _user) {
+void SharedStateBundle::setChatContact(ofxXMPPUser _user) {
     chatContact = _user;
     ofNotifyEvent(chatContactChange, chatContact, this);
 }
 
-void AppState::setCallCapability(string _callCapability) {
+void SharedStateBundle::setCallCapability(string _callCapability) {
     callCapability = _callCapability;
     ofNotifyEvent(callCapabilityChange, callCapability, this);
 }
