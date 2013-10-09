@@ -24,6 +24,14 @@ FriendView::~FriendView() {
     ofRemoveListener(ofEvents().mouseReleased, this, &FriendView::onMousePressed);
 }
 
+bool FriendView::hasCapability() {
+    for (int i = 0; i < user.capabilities.size(); i++) {
+        if (user.capabilities[i] == appState->callCapability) {
+            return true;
+        }
+    }
+    return false;
+}
 
 void FriendView::draw() {
     ofxUILabelButton::draw();
@@ -33,15 +41,7 @@ void FriendView::draw() {
     float shape_x = getParent()->getRect()->x + rect->x + m;
     float shape_y = getParent()->getRect()->y + rect->y + rect->height/2;
     
-    bool has_capability = false;
-    for (int i = 0; i < user.capabilities.size(); i++) {
-        if (user.capabilities[i] == appState->callCapability) {
-            has_capability = true;
-            break;
-        }
-    }
-    
-    if (has_capability && user.show == ofxXMPPShowAvailable) {
+    if (hasCapability() && user.show == ofxXMPPShowAvailable) {
         drawCapabilityIcon(shape_x, shape_y - FRIEND_STATE_CIRCLE_RADIUS);
     } else if (user.show == ofxXMPPShowAvailable) {
         drawAvailableIcon(shape_x, shape_y - FRIEND_STATE_CIRCLE_RADIUS);
@@ -154,16 +154,23 @@ void FriendView::drawCapabilityIcon(float x, float y) {
 bool FriendView::comparator(const ofxUIWidget * lhs, const ofxUIWidget * rhs) {
     FriendView * fl = (FriendView*)lhs;
     FriendView * fr = (FriendView*)rhs;
-    bool alphabetically_before = fl->user.userName.compare(fr->user.userName) <= 0;
-    int rankl = fl->status_rank();
-    int rankr = fr->status_rank();
     
-    if (rankl == rankr) {
-        return alphabetically_before;
-    } else {
-        return rankl < rankr;
+    // first sort by capability
+    bool fl_capable = fl->hasCapability();
+    bool fr_capable = fr->hasCapability();
+    if (fl_capable != fr_capable) {
+        return fl_capable ? true : false;
+    }
+
+    // then sort by availability
+    int fl_rank = fl->status_rank();
+    int fr_rank = fr->status_rank();
+    if (fl_rank != fr_rank) {
+        return fl_rank < fr_rank ? true : false;
     }
     
+    // then sort alphabetically
+    return fl->user.userName.compare(fr->user.userName) <= 0;
 }
 
 int FriendView::status_rank() { // higher rank means less available

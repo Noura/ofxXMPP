@@ -31,10 +31,13 @@ public:
     FriendView(ofxXMPPUser _user, float _w, AppState * _appState, ofxXMPP * _xmpp);
     ~FriendView();
 
+    void draw();
+    void onMousePressed(ofMouseEventArgs &e);
+    bool hasCapability();
+    int status_rank();
+    
     static bool isValidFriend(const ofxXMPPUser &_user);
     static string formatUserName(string _name);
-    void onMousePressed(ofMouseEventArgs &e);
-    void draw();
     
     static void drawLegend(float x, float y, AppState * _appState);
     static void drawAvailableIcon(float x, float y);
@@ -44,7 +47,6 @@ public:
     static void drawCapabilityIcon(float x, float y);
     
     static bool comparator(const ofxUIWidget * lhs, const ofxUIWidget * rhs);
-    int status_rank();
     
     ofxXMPPUser user;
     
