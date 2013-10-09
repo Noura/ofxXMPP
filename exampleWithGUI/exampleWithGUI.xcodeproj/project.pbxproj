@@ -22,6 +22,7 @@
 		4EC385811805E61200FBAB76 /* MessagesView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4EC3857B1805E61200FBAB76 /* MessagesView.cpp */; };
 		4EC385871805E61C00FBAB76 /* CustomEventLabelButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4EC385831805E61C00FBAB76 /* CustomEventLabelButton.cpp */; };
 		4EC385881805E61C00FBAB76 /* YesNoDialog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4EC385851805E61C00FBAB76 /* YesNoDialog.cpp */; };
+		4EC3858C1805F43000FBAB76 /* ofxXMPPCaller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4EC3858A1805F43000FBAB76 /* ofxXMPPCaller.cpp */; };
 		4EEFBF3817E1117E0025DF3E /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4EEFBF3117E1117E0025DF3E /* tinyxml.cpp */; };
 		4EEFBF3917E1117E0025DF3E /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4EEFBF3317E1117E0025DF3E /* tinyxmlerror.cpp */; };
 		4EEFBF3A17E1117E0025DF3E /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4EEFBF3417E1117E0025DF3E /* tinyxmlparser.cpp */; };
@@ -199,6 +200,8 @@
 		4EC385841805E61C00FBAB76 /* CustomEventLabelButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomEventLabelButton.h; sourceTree = "<group>"; };
 		4EC385851805E61C00FBAB76 /* YesNoDialog.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = YesNoDialog.cpp; sourceTree = "<group>"; };
 		4EC385861805E61C00FBAB76 /* YesNoDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YesNoDialog.h; sourceTree = "<group>"; };
+		4EC3858A1805F43000FBAB76 /* ofxXMPPCaller.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxXMPPCaller.cpp; sourceTree = "<group>"; };
+		4EC3858B1805F43000FBAB76 /* ofxXMPPCaller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxXMPPCaller.h; sourceTree = "<group>"; };
 		4EEFBF3117E1117E0025DF3E /* tinyxml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxml.cpp; sourceTree = "<group>"; };
 		4EEFBF3217E1117E0025DF3E /* tinyxml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tinyxml.h; sourceTree = "<group>"; };
 		4EEFBF3317E1117E0025DF3E /* tinyxmlerror.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlerror.cpp; sourceTree = "<group>"; };
@@ -921,6 +924,8 @@
 				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
 				4E84EEAE17DFAF1B006081FE /* AppState.h */,
 				4E84EEB117DFB574006081FE /* AppState.cpp */,
+				4EC3858A1805F43000FBAB76 /* ofxXMPPCaller.cpp */,
+				4EC3858B1805F43000FBAB76 /* ofxXMPPCaller.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -1190,6 +1195,7 @@
 				837220e80eb56cd44ad27f2a12ff4869 /* ofxSlider.cpp in Sources */,
 				4EC385881805E61C00FBAB76 /* YesNoDialog.cpp in Sources */,
 				856aa354d08ab4b323081444d6da4e5a /* ofxBaseGui.cpp in Sources */,
+				4EC3858C1805F43000FBAB76 /* ofxXMPPCaller.cpp in Sources */,
 				b266578fc55d23bfebc042e7628673a3 /* ofxGuiGroup.cpp in Sources */,
 				5cbb2ab3a60f65431d7b555db46d6bb4 /* ofxButton.cpp in Sources */,
 				686b0df6249b52e1a85b39ecf73c2f55 /* ofxKinect.cpp in Sources */,
