@@ -1,9 +1,7 @@
-/*
+/** Displays the list of contacts from XMPP
+ *
  *  FriendsView.h
  *
- *  Manages the list of contacts from RTP
- *  ofxGstXMPPRTP is the model (accessible through appState),
- *  FriendsView is the view
  *
  *  Created on: Sep 9, 2013
  *      Author: noura

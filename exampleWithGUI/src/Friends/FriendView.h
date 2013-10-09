@@ -1,4 +1,5 @@
-/*
+/** Displays a single XMPP user contact
+ *
  *  FriendView.h
  *
  *  Displays one RTP gchat contact
@@ -32,13 +33,23 @@ public:
     ~FriendView();
 
     void draw();
+    
+    /** sets appState->chatContact to its user */
     void onMousePressed(ofMouseEventArgs &e);
+    
+    /** returns whether this user has the custom app capability */
     bool hasCapability();
+    
+    /** translates the ofxXMPPShow enum status of this user into an integer where lower means more available */
     int status_rank();
     
+    /** checks to make sure _user would be a valid input to the FriendView constructor */
     static bool isValidFriend(const ofxXMPPUser &_user);
+    
+    /** format an ofxXMPPUser user.userName in a consistent way */
     static string formatUserName(string _name);
     
+    /** drawing user availability icons and a legend to explain the icons */
     static void drawLegend(float x, float y, AppState * _appState);
     static void drawAvailableIcon(float x, float y);
     static void drawAwayIcon(float x, float y);
@@ -46,6 +57,7 @@ public:
     static void drawXAIcon(float x, float y);
     static void drawCapabilityIcon(float x, float y);
     
+    /** sorts FriendView objects by whether they have the custom app capability, then by availability, then alphabetically */
     static bool comparator(const ofxUIWidget * lhs, const ofxUIWidget * rhs);
     
     ofxXMPPUser user;
