@@ -98,7 +98,8 @@ void FriendView::drawLegend(float x, float y, AppState * _appState) {
     float labelX = x + 4.0 + 4 * FRIEND_STATE_CIRCLE_RADIUS;
     if (_appState->callCapability.size() > 0) {
         drawCapabilityIcon(iconX, lineY);
-        ofDrawBitmapString("Has calling capability", labelX, lineY + labelYOffset);
+        string desc = "Has capability " + _appState->callCapability;
+        ofDrawBitmapString(desc, labelX, lineY + labelYOffset);
         lineY += lineH;
     }
     drawAvailableIcon(iconX, lineY);
