@@ -10,9 +10,9 @@
 
 #include "AppState.h"
 #include "ofxUI.h"
-#include "Messages/Messages.h"
-#include "Messages/MessagesView.h"
-#include "Friends/FriendsView.h"
+#include "Messages.h"
+#include "MessagesView.h"
+#include "FriendsView.h"
 #include "YesNoDialog.h"
 
 #define CALLING_GUI_FRIENDS_WIDTH 300
