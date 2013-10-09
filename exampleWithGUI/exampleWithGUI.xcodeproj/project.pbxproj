@@ -20,7 +20,7 @@
 		4E84EEAB17DF9C57006081FE /* Messages.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4E84EEA717DF9C57006081FE /* Messages.cpp */; };
 		4E84EEAC17DF9C57006081FE /* MessagesView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4E84EEA917DF9C57006081FE /* MessagesView.cpp */; };
 		4E84EEB217DFB574006081FE /* AppState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4E84EEB117DFB574006081FE /* AppState.cpp */; };
-		4E936DA317DE5B200089DAA0 /* GUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4E936DA217DE5B200089DAA0 /* GUI.cpp */; };
+		4E936DA317DE5B200089DAA0 /* CallingGUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4E936DA217DE5B200089DAA0 /* CallingGUI.cpp */; };
 		4EAC632F17E7B5FE0078B916 /* FriendView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4EAC632E17E7B5FE0078B916 /* FriendView.cpp */; };
 		4EEFBF3817E1117E0025DF3E /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4EEFBF3117E1117E0025DF3E /* tinyxml.cpp */; };
 		4EEFBF3917E1117E0025DF3E /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4EEFBF3317E1117E0025DF3E /* tinyxmlerror.cpp */; };
@@ -147,8 +147,8 @@
 		4E84EEAA17DF9C57006081FE /* MessagesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagesView.h; sourceTree = "<group>"; };
 		4E84EEAE17DFAF1B006081FE /* AppState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppState.h; sourceTree = "<group>"; };
 		4E84EEB117DFB574006081FE /* AppState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppState.cpp; sourceTree = "<group>"; };
-		4E936DA117DE5AF50089DAA0 /* GUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUI.h; sourceTree = "<group>"; };
-		4E936DA217DE5B200089DAA0 /* GUI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUI.cpp; sourceTree = "<group>"; };
+		4E936DA117DE5AF50089DAA0 /* CallingGUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallingGUI.h; sourceTree = "<group>"; };
+		4E936DA217DE5B200089DAA0 /* CallingGUI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CallingGUI.cpp; sourceTree = "<group>"; };
 		4EAC631B17E794510078B916 /* exampleWithGUIDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = exampleWithGUIDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EAC632D17E7B5F30078B916 /* FriendView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendView.h; sourceTree = "<group>"; };
 		4EAC632E17E7B5FE0078B916 /* FriendView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FriendView.cpp; sourceTree = "<group>"; };
@@ -918,8 +918,8 @@
 				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
 				92cc54e75b72f9f4d622aa2f252af6d3 /* ofxFPS.h */,
 				0bc3e447f91a9f8b43f93b26396d39dd /* ofxFPS.cpp */,
-				4E936DA117DE5AF50089DAA0 /* GUI.h */,
-				4E936DA217DE5B200089DAA0 /* GUI.cpp */,
+				4E936DA117DE5AF50089DAA0 /* CallingGUI.h */,
+				4E936DA217DE5B200089DAA0 /* CallingGUI.cpp */,
 				4E84EEAE17DFAF1B006081FE /* AppState.h */,
 				4E84EEB117DFB574006081FE /* AppState.cpp */,
 				14CC1E3A1803016100B2E60B /* YesNoDialog.cpp */,
@@ -1218,7 +1218,7 @@
 				DA4B6A1A17CF99AA009F813D /* OscTypes.cpp in Sources */,
 				DA4B6A1C17CF99AA009F813D /* ofxOscBundle.cpp in Sources */,
 				DA4B6A1D17CF99AA009F813D /* ofxOscMessage.cpp in Sources */,
-				4E936DA317DE5B200089DAA0 /* GUI.cpp in Sources */,
+				4E936DA317DE5B200089DAA0 /* CallingGUI.cpp in Sources */,
 				4E84EEA517DF9C45006081FE /* FriendsView.cpp in Sources */,
 				4E84EEAB17DF9C57006081FE /* Messages.cpp in Sources */,
 				4E84EEAC17DF9C57006081FE /* MessagesView.cpp in Sources */,

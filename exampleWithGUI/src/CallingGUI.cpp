@@ -1,13 +1,13 @@
 /*
- * GUI.h
+ * CallingGUI.h
  *
  *  Created on: Sep 9, 2013
  *      Author: noura
  */
 
-#include "GUI.h"
+#include "CallingGUI.h"
 
-GUI::GUI(AppState * _appState, ofxXMPP * _xmpp)
+CallingGUI::CallingGUI(AppState * _appState, ofxXMPP * _xmpp)
 : appState(_appState)
 , xmpp(_xmpp)
 , addTempMsg(false)
@@ -17,25 +17,25 @@ GUI::GUI(AppState * _appState, ofxXMPP * _xmpp)
 , callingDialog(NULL) {
 }
 
-GUI::~GUI() {
-    ofRemoveListener(appState->chatContactChange, this, &GUI::onChatContactChange);
-    ofRemoveListener(xmpp->newMessage, this, &GUI::onNewRemoteMessage);
+CallingGUI::~CallingGUI() {
+    ofRemoveListener(appState->chatContactChange, this, &CallingGUI::onChatContactChange);
+    ofRemoveListener(xmpp->newMessage, this, &CallingGUI::onNewRemoteMessage);
     delete friendsView;
     delete messagesView;
     delete messages;
-    if (callingDialog) ofRemoveListener(callingDialog->answer, this, &GUI::onCallingDialogAnswer);
+    if (callingDialog) ofRemoveListener(callingDialog->answer, this, &CallingGUI::onCallingDialogAnswer);
     delete callingDialog;
 }
 
-void GUI::setup() {    
-    friendsView = new FriendsView(0, 0, GUI_FRIENDS_WIDTH, ofGetHeight(), appState, xmpp);
+void CallingGUI::setup() {
+    friendsView = new FriendsView(0, 0, CALLING_GUI_FRIENDS_WIDTH, ofGetHeight(), appState, xmpp);
     friendsView->setup();
     
-    ofAddListener(appState->chatContactChange, this, &GUI::onChatContactChange);
-    ofAddListener(xmpp->newMessage, this, &GUI::onNewRemoteMessage);
+    ofAddListener(appState->chatContactChange, this, &CallingGUI::onChatContactChange);
+    ofAddListener(xmpp->newMessage, this, &CallingGUI::onNewRemoteMessage);
 }
 
-void GUI::update() {
+void CallingGUI::update() {
     friendsView->update();
     if (messagesView) {
         messagesView->update();
@@ -46,30 +46,30 @@ void GUI::update() {
     }
 }
 
-void GUI::draw() {
+void CallingGUI::draw() {
     friendsView->draw();
     if (messagesView) messagesView->draw();
     if (callingDialog) callingDialog->draw();
 }
 
-void GUI::onChatContactChange(ofxXMPPUser & _user) {
+void CallingGUI::onChatContactChange(ofxXMPPUser & _user) {
     delete messagesView;
     delete messages;
 
     messages = new Messages(appState, xmpp);
-    messagesView = new MessagesView(GUI_FRIENDS_WIDTH, 0, GUI_MESSAGES_WIDTH, ofGetHeight(), appState, xmpp);
+    messagesView = new MessagesView(CALLING_GUI_FRIENDS_WIDTH, 0, CALLING_GUI_MESSAGES_WIDTH, ofGetHeight(), appState, xmpp);
     messages->setView(messagesView);
     messagesView->setModel(messages);
     messagesView->setup();
 }
 
-void GUI::onNewRemoteMessage(ofxXMPPMessage & _msg) {
+void CallingGUI::onNewRemoteMessage(ofxXMPPMessage & _msg) {
     if (isSameXMPPUserName(_msg.from, appState->chatContact.userName)) {
         messages->addMessage(_msg);
     } else {
         tempMsg = _msg;
         if (callingDialog) {
-            ofRemoveListener(callingDialog->answer, this, &GUI::onCallingDialogAnswer);
+            ofRemoveListener(callingDialog->answer, this, &CallingGUI::onCallingDialogAnswer);
             delete callingDialog;
             callingDialog = NULL;
         }
@@ -78,11 +78,11 @@ void GUI::onNewRemoteMessage(ofxXMPPMessage & _msg) {
         dialog += " just messaged you. Do you want to switch to a conversation with them?";
         callingDialog = new YesNoDialog(700, 50, 300, 200, dialog);
         callingDialog->setup();
-        ofAddListener(callingDialog->answer, this, &GUI::onCallingDialogAnswer);
+        ofAddListener(callingDialog->answer, this, &CallingGUI::onCallingDialogAnswer);
     }
 }
 
-bool GUI::isSameXMPPUserName(string userName1, string userName2) {
+bool CallingGUI::isSameXMPPUserName(string userName1, string userName2) {
     // sometimes email addresses have extra junk characters at the end
     // this checks to see if one email address is the prefix of the other
     if (userName1.size() == 0 || userName2.size() == 0) {
@@ -101,7 +101,7 @@ bool GUI::isSameXMPPUserName(string userName1, string userName2) {
     return shortNames[0].compare(shortNames[1]) == 0;
 }
 
-void GUI::onCallingDialogAnswer(bool & _answer) {
+void CallingGUI::onCallingDialogAnswer(bool & _answer) {
     // TODO what if user messages you and then suddenly signs out?
     if (_answer) { // user said yes
         ofxXMPPUser user;
@@ -115,7 +115,7 @@ void GUI::onCallingDialogAnswer(bool & _answer) {
             }
         }
     }
-    ofRemoveListener(callingDialog->answer, this, &GUI::onCallingDialogAnswer);
+    ofRemoveListener(callingDialog->answer, this, &CallingGUI::onCallingDialogAnswer);
     delete callingDialog;
     callingDialog = NULL;
 }

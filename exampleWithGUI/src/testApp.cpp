@@ -14,7 +14,7 @@ void testApp::setup(){
 
     appState.setCallCapability(CALL_CAPABILITY);
     
-    gui = new GUI(&appState, &xmpp);
+    gui = new CallingGUI(&appState, &xmpp);
     gui->setup();
 }
 

@@ -10,7 +10,7 @@
 #ifndef example_all_FriendsView_h
 #define example_all_FriendsView_h
 
-class GUI;
+class CallingGUI;
 
 #include "ofMain.h"
 #include "ofxUI.h"

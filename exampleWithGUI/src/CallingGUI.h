@@ -1,12 +1,12 @@
 /*
- * GUI.h
+ * CallingGUI.h
  *
  *  Created on: Sep 9, 2013
  *      Author: noura
  */
 
-#ifndef example_all_GUI_h
-#define example_all_GUI_h
+#ifndef example_all_CALLING_GUI_H
+#define example_all_CALLING_GUI_H
 
 #include "AppState.h"
 #include "ofxUI.h"
@@ -15,15 +15,15 @@
 #include "Friends/FriendsView.h"
 #include "YesNoDialog.h"
 
-#define GUI_FRIENDS_WIDTH 300
-#define GUI_MESSAGES_WIDTH 300
+#define CALLING_GUI_FRIENDS_WIDTH 300
+#define CALLING_GUI_MESSAGES_WIDTH 300
 
-class GUI {
+class CallingGUI {
 
 public:
 
-    GUI(AppState * _appState, ofxXMPP * _xmpp);
-    ~GUI();
+    CallingGUI(AppState * _appState, ofxXMPP * _xmpp);
+    ~CallingGUI();
     
     void setup();
     void update();

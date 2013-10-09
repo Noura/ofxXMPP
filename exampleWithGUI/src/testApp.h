@@ -10,7 +10,7 @@
 #include "ofMain.h"
 #include "ofxUI.h"
 
-#include "GUI.h"
+#include "CallingGUI.h"
 
 #define CALL_CAPABILITY "telekinect"
 
@@ -38,5 +38,5 @@ class testApp : public ofBaseApp{
 
         ofxXMPP xmpp;
     
-		GUI *gui;
+		CallingGUI *gui;
 };
