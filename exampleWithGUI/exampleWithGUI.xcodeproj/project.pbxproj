@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		14CC1E3C1803016100B2E60B /* YesNoDialog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14CC1E3A1803016100B2E60B /* YesNoDialog.cpp */; };
-		14CC1E3F18035EE700B2E60B /* CustomEventLabelButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14CC1E3D18035EE600B2E60B /* CustomEventLabelButton.cpp */; };
 		169d3c72fde6c5590a1616f500a456b4 /* ofxCvFloatImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7b6a03390302d5a2c9f0e4ab630ae8d6 /* ofxCvFloatImage.cpp */; };
 		1cd33e884d9e3358252e82a14dc97644 /* ofxToggle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 907c5b5e104864a2d3a2574573796b13 /* ofxToggle.cpp */; };
 		1d5f3298c2fa073628012944b1efde88 /* ofxCvContourFinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = c76de5c29bdbd2caa1dd0021a7376220 /* ofxCvContourFinder.cpp */; };
@@ -16,12 +14,14 @@
 		255a7b680dc81e543c875794909009cd /* usb_libusb10.c in Sources */ = {isa = PBXBuildFile; fileRef = 28f9707464ba3ff98e05096cb8975bfc /* usb_libusb10.c */; };
 		483908258d00b98b4be69f0765fb3433 /* ofxLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 78d67a00eb899fac0943059784f8212a /* ofxLabel.cpp */; };
 		49beeb2dfa5319d55aa6899f53b95313 /* tilt.c in Sources */ = {isa = PBXBuildFile; fileRef = bf2f2aa872288d30f53983efd0e677a0 /* tilt.c */; };
-		4E84EEA517DF9C45006081FE /* FriendsView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4E84EEA317DF9C45006081FE /* FriendsView.cpp */; };
-		4E84EEAB17DF9C57006081FE /* Messages.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4E84EEA717DF9C57006081FE /* Messages.cpp */; };
-		4E84EEAC17DF9C57006081FE /* MessagesView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4E84EEA917DF9C57006081FE /* MessagesView.cpp */; };
 		4E84EEB217DFB574006081FE /* AppState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4E84EEB117DFB574006081FE /* AppState.cpp */; };
-		4E936DA317DE5B200089DAA0 /* CallingGUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4E936DA217DE5B200089DAA0 /* CallingGUI.cpp */; };
-		4EAC632F17E7B5FE0078B916 /* FriendView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4EAC632E17E7B5FE0078B916 /* FriendView.cpp */; };
+		4EC3857D1805E61200FBAB76 /* CallingGUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4EC385731805E61200FBAB76 /* CallingGUI.cpp */; };
+		4EC3857E1805E61200FBAB76 /* FriendsView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4EC385751805E61200FBAB76 /* FriendsView.cpp */; };
+		4EC3857F1805E61200FBAB76 /* FriendView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4EC385771805E61200FBAB76 /* FriendView.cpp */; };
+		4EC385801805E61200FBAB76 /* Messages.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4EC385791805E61200FBAB76 /* Messages.cpp */; };
+		4EC385811805E61200FBAB76 /* MessagesView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4EC3857B1805E61200FBAB76 /* MessagesView.cpp */; };
+		4EC385871805E61C00FBAB76 /* CustomEventLabelButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4EC385831805E61C00FBAB76 /* CustomEventLabelButton.cpp */; };
+		4EC385881805E61C00FBAB76 /* YesNoDialog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4EC385851805E61C00FBAB76 /* YesNoDialog.cpp */; };
 		4EEFBF3817E1117E0025DF3E /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4EEFBF3117E1117E0025DF3E /* tinyxml.cpp */; };
 		4EEFBF3917E1117E0025DF3E /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4EEFBF3317E1117E0025DF3E /* tinyxmlerror.cpp */; };
 		4EEFBF3A17E1117E0025DF3E /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4EEFBF3417E1117E0025DF3E /* tinyxmlparser.cpp */; };
@@ -115,10 +115,6 @@
 		0cf0aa3895d28e97d8a1e4a938976234 /* ground_truth.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ground_truth.h; path = ../../ofxOpenCv/libs/opencv/include/opencv2/flann/ground_truth.h; sourceTree = SOURCE_ROOT; };
 		0fa5069d10e89116d6fdf7d0bb8bd013 /* strophepp.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = strophepp.h; path = ../libs/strophe/include/strophepp.h; sourceTree = SOURCE_ROOT; };
 		114b872696817cc33990fc83feb1259e /* imgproc.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = imgproc.hpp; path = ../../ofxOpenCv/libs/opencv/include/opencv2/imgproc/imgproc.hpp; sourceTree = SOURCE_ROOT; };
-		14CC1E3A1803016100B2E60B /* YesNoDialog.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = YesNoDialog.cpp; sourceTree = "<group>"; };
-		14CC1E3B1803016100B2E60B /* YesNoDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YesNoDialog.h; sourceTree = "<group>"; };
-		14CC1E3D18035EE600B2E60B /* CustomEventLabelButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CustomEventLabelButton.cpp; sourceTree = "<group>"; };
-		14CC1E3E18035EE600B2E60B /* CustomEventLabelButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomEventLabelButton.h; sourceTree = "<group>"; };
 		15f2c6477a769c03a56d1401690aafec /* ofxSlider.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxSlider.cpp; path = ../../ofxGui/src/ofxSlider.cpp; sourceTree = SOURCE_ROOT; };
 		17e65988300fbd9aaa2cd0ca7aad0cfc /* ofxGui.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxGui.h; path = ../../ofxGui/src/ofxGui.h; sourceTree = SOURCE_ROOT; };
 		1c0da2561397a7de0246858bd5380c28 /* ofxGuiGroup.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxGuiGroup.h; path = ../../ofxGui/src/ofxGuiGroup.h; sourceTree = SOURCE_ROOT; };
@@ -139,19 +135,9 @@
 		45410dd818bb205166e67e89e7443a54 /* any.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = any.h; path = ../../ofxOpenCv/libs/opencv/include/opencv2/flann/any.h; sourceTree = SOURCE_ROOT; };
 		45f38573a0b0deec8bbc7a2c680cffc4 /* simplex_downhill.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = simplex_downhill.h; path = ../../ofxOpenCv/libs/opencv/include/opencv2/flann/simplex_downhill.h; sourceTree = SOURCE_ROOT; };
 		49effcf36cf194cce0e1faabecebbc9b /* kdtree_index.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = kdtree_index.h; path = ../../ofxOpenCv/libs/opencv/include/opencv2/flann/kdtree_index.h; sourceTree = SOURCE_ROOT; };
-		4E84EEA317DF9C45006081FE /* FriendsView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FriendsView.cpp; sourceTree = "<group>"; };
-		4E84EEA417DF9C45006081FE /* FriendsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsView.h; sourceTree = "<group>"; };
-		4E84EEA717DF9C57006081FE /* Messages.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Messages.cpp; sourceTree = "<group>"; };
-		4E84EEA817DF9C57006081FE /* Messages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Messages.h; sourceTree = "<group>"; };
-		4E84EEA917DF9C57006081FE /* MessagesView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MessagesView.cpp; sourceTree = "<group>"; };
-		4E84EEAA17DF9C57006081FE /* MessagesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagesView.h; sourceTree = "<group>"; };
 		4E84EEAE17DFAF1B006081FE /* AppState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppState.h; sourceTree = "<group>"; };
 		4E84EEB117DFB574006081FE /* AppState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppState.cpp; sourceTree = "<group>"; };
-		4E936DA117DE5AF50089DAA0 /* CallingGUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallingGUI.h; sourceTree = "<group>"; };
-		4E936DA217DE5B200089DAA0 /* CallingGUI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CallingGUI.cpp; sourceTree = "<group>"; };
 		4EAC631B17E794510078B916 /* exampleWithGUIDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = exampleWithGUIDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4EAC632D17E7B5F30078B916 /* FriendView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendView.h; sourceTree = "<group>"; };
-		4EAC632E17E7B5FE0078B916 /* FriendView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FriendView.cpp; sourceTree = "<group>"; };
 		4EBE0FEA17FF3C90002E68CA /* ofxUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxUI.h; sourceTree = "<group>"; };
 		4EBE0FEB17FF3C90002E68CA /* ofxUI2DGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxUI2DGraph.h; sourceTree = "<group>"; };
 		4EBE0FEC17FF3C90002E68CA /* ofxUI2DPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxUI2DPad.h; sourceTree = "<group>"; };
@@ -201,6 +187,20 @@
 		4EBE101817FF3C90002E68CA /* ofxUIWaveform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxUIWaveform.h; sourceTree = "<group>"; };
 		4EBE101917FF3C90002E68CA /* ofxUIWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxUIWidget.h; sourceTree = "<group>"; };
 		4EBE101A17FF3C90002E68CA /* ofxUIWidgetWithLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxUIWidgetWithLabel.h; sourceTree = "<group>"; };
+		4EC385731805E61200FBAB76 /* CallingGUI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CallingGUI.cpp; sourceTree = "<group>"; };
+		4EC385741805E61200FBAB76 /* CallingGUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallingGUI.h; sourceTree = "<group>"; };
+		4EC385751805E61200FBAB76 /* FriendsView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FriendsView.cpp; sourceTree = "<group>"; };
+		4EC385761805E61200FBAB76 /* FriendsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsView.h; sourceTree = "<group>"; };
+		4EC385771805E61200FBAB76 /* FriendView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FriendView.cpp; sourceTree = "<group>"; };
+		4EC385781805E61200FBAB76 /* FriendView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendView.h; sourceTree = "<group>"; };
+		4EC385791805E61200FBAB76 /* Messages.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Messages.cpp; sourceTree = "<group>"; };
+		4EC3857A1805E61200FBAB76 /* Messages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Messages.h; sourceTree = "<group>"; };
+		4EC3857B1805E61200FBAB76 /* MessagesView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MessagesView.cpp; sourceTree = "<group>"; };
+		4EC3857C1805E61200FBAB76 /* MessagesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagesView.h; sourceTree = "<group>"; };
+		4EC385831805E61C00FBAB76 /* CustomEventLabelButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CustomEventLabelButton.cpp; sourceTree = "<group>"; };
+		4EC385841805E61C00FBAB76 /* CustomEventLabelButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomEventLabelButton.h; sourceTree = "<group>"; };
+		4EC385851805E61C00FBAB76 /* YesNoDialog.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = YesNoDialog.cpp; sourceTree = "<group>"; };
+		4EC385861805E61C00FBAB76 /* YesNoDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YesNoDialog.h; sourceTree = "<group>"; };
 		4EEFBF3117E1117E0025DF3E /* tinyxml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxml.cpp; sourceTree = "<group>"; };
 		4EEFBF3217E1117E0025DF3E /* tinyxml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tinyxml.h; sourceTree = "<group>"; };
 		4EEFBF3317E1117E0025DF3E /* tinyxmlerror.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlerror.cpp; sourceTree = "<group>"; };
@@ -547,28 +547,6 @@
 			name = ofxGui;
 			sourceTree = "<group>";
 		};
-		4E84EEA217DF9C45006081FE /* Friends */ = {
-			isa = PBXGroup;
-			children = (
-				4E84EEA317DF9C45006081FE /* FriendsView.cpp */,
-				4E84EEA417DF9C45006081FE /* FriendsView.h */,
-				4EAC632D17E7B5F30078B916 /* FriendView.h */,
-				4EAC632E17E7B5FE0078B916 /* FriendView.cpp */,
-			);
-			path = Friends;
-			sourceTree = "<group>";
-		};
-		4E84EEA617DF9C57006081FE /* Messages */ = {
-			isa = PBXGroup;
-			children = (
-				4E84EEA717DF9C57006081FE /* Messages.cpp */,
-				4E84EEA817DF9C57006081FE /* Messages.h */,
-				4E84EEA917DF9C57006081FE /* MessagesView.cpp */,
-				4E84EEAA17DF9C57006081FE /* MessagesView.h */,
-			);
-			path = Messages;
-			sourceTree = "<group>";
-		};
 		4EBE0FE417FF3C63002E68CA /* ofxUI-fork */ = {
 			isa = PBXGroup;
 			children = (
@@ -632,6 +610,34 @@
 			);
 			name = src;
 			path = "../../ofxUI-fork/src";
+			sourceTree = "<group>";
+		};
+		4EC385721805E61200FBAB76 /* Calling */ = {
+			isa = PBXGroup;
+			children = (
+				4EC385731805E61200FBAB76 /* CallingGUI.cpp */,
+				4EC385741805E61200FBAB76 /* CallingGUI.h */,
+				4EC385751805E61200FBAB76 /* FriendsView.cpp */,
+				4EC385761805E61200FBAB76 /* FriendsView.h */,
+				4EC385771805E61200FBAB76 /* FriendView.cpp */,
+				4EC385781805E61200FBAB76 /* FriendView.h */,
+				4EC385791805E61200FBAB76 /* Messages.cpp */,
+				4EC3857A1805E61200FBAB76 /* Messages.h */,
+				4EC3857B1805E61200FBAB76 /* MessagesView.cpp */,
+				4EC3857C1805E61200FBAB76 /* MessagesView.h */,
+			);
+			path = Calling;
+			sourceTree = "<group>";
+		};
+		4EC385821805E61C00FBAB76 /* Popup Utility */ = {
+			isa = PBXGroup;
+			children = (
+				4EC385831805E61C00FBAB76 /* CustomEventLabelButton.cpp */,
+				4EC385841805E61C00FBAB76 /* CustomEventLabelButton.h */,
+				4EC385851805E61C00FBAB76 /* YesNoDialog.cpp */,
+				4EC385861805E61C00FBAB76 /* YesNoDialog.h */,
+			);
+			path = "Popup Utility";
 			sourceTree = "<group>";
 		};
 		4EEFBF2F17E1117E0025DF3E /* ofxXmlSettings */ = {
@@ -911,21 +917,15 @@
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				4E84EEA617DF9C57006081FE /* Messages */,
-				4E84EEA217DF9C45006081FE /* Friends */,
+				4EC385821805E61C00FBAB76 /* Popup Utility */,
+				4EC385721805E61200FBAB76 /* Calling */,
 				DA4B69DA17CF981C009F813D /* testApp.cpp */,
 				DA4B69DB17CF981C009F813D /* testApp.h */,
 				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
 				92cc54e75b72f9f4d622aa2f252af6d3 /* ofxFPS.h */,
 				0bc3e447f91a9f8b43f93b26396d39dd /* ofxFPS.cpp */,
-				4E936DA117DE5AF50089DAA0 /* CallingGUI.h */,
-				4E936DA217DE5B200089DAA0 /* CallingGUI.cpp */,
 				4E84EEAE17DFAF1B006081FE /* AppState.h */,
 				4E84EEB117DFB574006081FE /* AppState.cpp */,
-				14CC1E3A1803016100B2E60B /* YesNoDialog.cpp */,
-				14CC1E3B1803016100B2E60B /* YesNoDialog.h */,
-				14CC1E3D18035EE600B2E60B /* CustomEventLabelButton.cpp */,
-				14CC1E3E18035EE600B2E60B /* CustomEventLabelButton.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -1194,10 +1194,12 @@
 				1cd33e884d9e3358252e82a14dc97644 /* ofxToggle.cpp in Sources */,
 				b56fe57cc35806596d38118c4b1b847e /* ofxSliderGroup.cpp in Sources */,
 				837220e80eb56cd44ad27f2a12ff4869 /* ofxSlider.cpp in Sources */,
+				4EC385881805E61C00FBAB76 /* YesNoDialog.cpp in Sources */,
 				856aa354d08ab4b323081444d6da4e5a /* ofxBaseGui.cpp in Sources */,
 				b266578fc55d23bfebc042e7628673a3 /* ofxGuiGroup.cpp in Sources */,
 				5cbb2ab3a60f65431d7b555db46d6bb4 /* ofxButton.cpp in Sources */,
 				686b0df6249b52e1a85b39ecf73c2f55 /* ofxKinect.cpp in Sources */,
+				4EC3857F1805E61200FBAB76 /* FriendView.cpp in Sources */,
 				ace7dc9a3223ed5ee1b80074175a7907 /* cameras.c in Sources */,
 				f4135eefc911e9ed211fb6f9cd638db8 /* core.c in Sources */,
 				d31f5c1b140c59b2af1533a8cf661f5b /* registration.c in Sources */,
@@ -1209,27 +1211,25 @@
 				d3301f6a0b43bb293ed97c1d5d26c840 /* ofxCvShortImage.cpp in Sources */,
 				250a95ba26587be85db0a353e6e1dea2 /* ofxCvColorImage.cpp in Sources */,
 				169d3c72fde6c5590a1616f500a456b4 /* ofxCvFloatImage.cpp in Sources */,
+				4EC3857E1805E61200FBAB76 /* FriendsView.cpp in Sources */,
 				1d5f3298c2fa073628012944b1efde88 /* ofxCvContourFinder.cpp in Sources */,
 				4ba71b1b079846f072b225e767906016 /* ofxXMPP.cpp in Sources */,
+				4EC385871805E61C00FBAB76 /* CustomEventLabelButton.cpp in Sources */,
 				DA4B69DC17CF981C009F813D /* testApp.cpp in Sources */,
 				DA4B6A1417CF99AA009F813D /* OscOutboundPacketStream.cpp in Sources */,
+				4EC3857D1805E61200FBAB76 /* CallingGUI.cpp in Sources */,
+				4EC385801805E61200FBAB76 /* Messages.cpp in Sources */,
 				DA4B6A1617CF99AA009F813D /* OscPrintReceivedElements.cpp in Sources */,
 				DA4B6A1817CF99AA009F813D /* OscReceivedElements.cpp in Sources */,
 				DA4B6A1A17CF99AA009F813D /* OscTypes.cpp in Sources */,
 				DA4B6A1C17CF99AA009F813D /* ofxOscBundle.cpp in Sources */,
+				4EC385811805E61200FBAB76 /* MessagesView.cpp in Sources */,
 				DA4B6A1D17CF99AA009F813D /* ofxOscMessage.cpp in Sources */,
-				4E936DA317DE5B200089DAA0 /* CallingGUI.cpp in Sources */,
-				4E84EEA517DF9C45006081FE /* FriendsView.cpp in Sources */,
-				4E84EEAB17DF9C57006081FE /* Messages.cpp in Sources */,
-				4E84EEAC17DF9C57006081FE /* MessagesView.cpp in Sources */,
 				4E84EEB217DFB574006081FE /* AppState.cpp in Sources */,
 				4EEFBF3817E1117E0025DF3E /* tinyxml.cpp in Sources */,
 				4EEFBF3917E1117E0025DF3E /* tinyxmlerror.cpp in Sources */,
 				4EEFBF3A17E1117E0025DF3E /* tinyxmlparser.cpp in Sources */,
 				4EEFBF3B17E1117E0025DF3E /* ofxXmlSettings.cpp in Sources */,
-				4EAC632F17E7B5FE0078B916 /* FriendView.cpp in Sources */,
-				14CC1E3C1803016100B2E60B /* YesNoDialog.cpp in Sources */,
-				14CC1E3F18035EE700B2E60B /* CustomEventLabelButton.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

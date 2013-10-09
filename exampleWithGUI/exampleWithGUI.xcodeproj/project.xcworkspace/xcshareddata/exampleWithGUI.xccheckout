@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>198FC932-5DCC-4683-B2F6-99D8B50E264F</string>
+	<key>IDESourceControlProjectName</key>
+	<string>exampleWithGUI</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>22430E19-B37A-4571-AF86-7788F60393A4</key>
+		<string>https://github.com/Noura/ofxUI.git</string>
+		<key>353F9372-1A0B-43B3-8627-9E1885123B76</key>
+		<string>ssh://github.com/Noura/ofxXMPP.git</string>
+		<key>DEF20125-7343-4147-B535-B451B4752876</key>
+		<string>https://github.com/arturoc/ofxNice</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>exampleWithGUI/exampleWithGUI.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>22430E19-B37A-4571-AF86-7788F60393A4</key>
+		<string>../../../../ofxUI-fork</string>
+		<key>353F9372-1A0B-43B3-8627-9E1885123B76</key>
+		<string>../../..</string>
+		<key>DEF20125-7343-4147-B535-B451B4752876</key>
+		<string>../../../../ofxNice</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/Noura/ofxXMPP.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>353F9372-1A0B-43B3-8627-9E1885123B76</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>DEF20125-7343-4147-B535-B451B4752876</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ofxNice</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>22430E19-B37A-4571-AF86-7788F60393A4</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ofxUI-fork</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>353F9372-1A0B-43B3-8627-9E1885123B76</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ofxXMPP-fork</string>
+		</dict>
+	</array>
+</dict>
+</plist>
