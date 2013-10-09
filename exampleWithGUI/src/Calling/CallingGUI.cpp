@@ -1,4 +1,21 @@
-/*
+/* Lets the user see their contacts and select one to chat with.
+ *
+ * This is intentionally NOT a full featured chat client. It is intended to pair
+ * with ofStreamer to help two people on separate computers find each other,
+ * text chat a little bit, and call each other to form the peer-to-peer network
+ * connection needed for ofStreamer.
+ *
+ * Text chatting is only provided as a convenience to help people communicate
+ * before connecting. For example, Bob and Sue want to connect.
+ *
+ * Sue: "Hey Bob, ready for our call?"
+ * Bob: "Hang on a sec, plugging in my Kinect..."
+ * Sue: "OK."
+ * Bob: "OK, ready."
+ *
+ * Perhaps the two connected users could continue to chat while connected and
+ * using the application built with ofStreamer.
+ *
  * CallingGUI.h
  *
  *  Created on: Sep 9, 2013
