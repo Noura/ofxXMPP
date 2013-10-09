@@ -34,11 +34,10 @@
 #include "CallingGUI.h"
 #include "AppState.h"
 
-#define CALL_CAPABILITY "telekinect"
-
 class ofxXMPPCaller {
 public:
     
+    ofxXMPPCaller(string _capability);
     ~ofxXMPPCaller();
     
     void setup();

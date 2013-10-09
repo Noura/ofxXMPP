@@ -1,7 +1,7 @@
 #include "testApp.h"
 
 void testApp::setup(){
-    xmppCaller = new ofxXMPPCaller();
+    xmppCaller = new ofxXMPPCaller("telekinect");
     xmppCaller->setup();
 }
 

@@ -6,6 +6,10 @@
 
 #include "ofxXMPPCaller.h"
 
+ofxXMPPCaller::ofxXMPPCaller(string _capability) {
+    appState.setCallCapability(_capability);
+}
+
 void ofxXMPPCaller::setup() {
     ofXml settings;
 	settings.load("settings.xml");
@@ -15,9 +19,7 @@ void ofxXMPPCaller::setup() {
     
     xmpp.setShow(ofxXMPPShowAvailable);
     xmpp.connect(server, user, pwd);
-    xmpp.setCapabilities(CALL_CAPABILITY);
-    
-    appState.setCallCapability(CALL_CAPABILITY);
+    xmpp.setCapabilities(appState.callCapability);
     
     gui = new CallingGUI(&appState, &xmpp);
     gui->setup();
